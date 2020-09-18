@@ -2,7 +2,7 @@ void MyFrame::Init_Grid_Dev( void )
 {
 int i, n_col, n_row;
 
-n_col = 7;
+n_col = 12;
 n_row = 7;
 
 m_dev_grid->SetColMinimalAcceptableWidth( 0 );
@@ -38,13 +38,36 @@ for( i = 0; i < n_row; i++ )
 m_dev_grid->SetRowLabelValue( i, wxEmptyString );
 }
 
+//	m_grid->SetColLabelValue( 0, wxEmptyString );		// Size 20
+//	//m_grid->SetColLabelValue( 0, wxT( "Name" ) );
+//	m_grid->SetColLabelValue( 1, wxT( "Value" ) );		// Size 100
+//	//m_grid->SetColLabelValue( 1, wxT( "" ) );
+//	m_grid->SetColLabelValue( 2, wxT( "Type" ) );		// Size 180
+//	m_grid->SetColLabelValue( 3, wxT( "Port" ) );		// Size 60
+//	m_grid->SetColLabelValue( 4, wxT( "Comment" ) );	// Size 400
+//	m_grid->SetColLabelValue( 5, wxT( "Sync" ) );		// Size 40
+
+
+ButtonRenderer *fw_btn = new ButtonRenderer( wxT( "Generate FW" ) );
+m_dev_grid->SetCellRenderer(0, 9, fw_btn );
+m_dev_grid->SetCellRenderer(1, 9, fw_btn );
+m_dev_grid->SetCellRenderer(3, 9, fw_btn );
+
+
 m_dev_grid->SetColSize( 0, 20 );
 m_dev_grid->SetColSize( 1, 20 );
 m_dev_grid->SetColSize( 2, 20 );
 m_dev_grid->SetColSize( 3, 180 );
 m_dev_grid->SetColSize( 4, 180 );
 m_dev_grid->SetColSize( 5, 60 );
-m_dev_grid->SetColSize( 6, 100 );
+m_dev_grid->SetColSize( 6, 60 );
+m_dev_grid->SetColSize( 7, 60 );
+m_dev_grid->SetColSize( 8, 100 );
+m_dev_grid->SetColSize( 9, 90 );
+m_dev_grid->SetColSize( 10, 100 );
+m_dev_grid->SetColSize( 11, 30 );
+//m_dev_grid->SetColSize( 12, 30 );
+//m_dev_grid->SetColSize( 13, 30 );
 
 m_dev_grid->SetColLabelValue( 0, wxEmptyString );
 m_dev_grid->SetColLabelValue( 1, wxEmptyString );
@@ -52,8 +75,18 @@ m_dev_grid->SetColLabelValue( 2, wxEmptyString );
 
 m_dev_grid->SetColLabelValue( 3, wxT( "Name" ) );
 m_dev_grid->SetColLabelValue( 4, wxT( "Type" ) );
-m_dev_grid->SetColLabelValue( 5, wxT( "Port" ) );
-m_dev_grid->SetColLabelValue( 6, wxT( "Value" ) );
+m_dev_grid->SetColLabelValue( 5, wxT( "Type_O" ) );
+m_dev_grid->SetColLabelValue( 6, wxT( "PuPd" ) );
+m_dev_grid->SetColLabelValue( 7, wxT( "Port" ) );
+m_dev_grid->SetColLabelValue( 8, wxT( "Value" ) );
+m_dev_grid->SetColLabelValue( 9, wxEmptyString );	// FW gen button
+m_dev_grid->SetColLabelValue( 10, wxT( "FW SN" ) );
+m_dev_grid->SetColLabelValue( 11, wxT( "Dev" ) );	// D-dev; G-Gateway; Empty-Config
+//m_dev_grid->SetColLabelValue( 12, wxEmptyString );	// E-Expand; S-Stretch
+//m_dev_grid->SetColLabelValue( 13, wxEmptyString );	// S-Show; H-Hide
+
+
+
 
 m_dev_grid->SetCellValue( 0, 0, wxT( "PLC GW" ) );
 m_dev_grid->SetCellSize( 0, 0, 1, 3 );
@@ -93,6 +126,15 @@ m_dev_grid->SetCellRenderer( 6, 2, new myImageGridCellRenderer( c_20_5_xpm ) );
 
 m_dev_grid->SetRowLabelValue( 2, wxT( "99" ) );
 
+//m_config_panel->SetFocus();
+m_auinotebook->SetSelection( 2 );
+Refresh();
+
+//m_dev_grid->SetFocus();
+
+//this->Navigate(m_dev_grid);
+
+//m_dev_grid->SetGridCursor( 3, 3 );		// !!!
 
 //m_dev_grid->SetColLabelValue( 0, wxEmptyString );
 ////m_dev_grid->SetColLabelValue( 0, wxT( "Name" ) );

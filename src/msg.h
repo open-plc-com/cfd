@@ -1,4 +1,4 @@
-#define MSG_000 wxT( "  Firmware Creator for Modules" )
+#define MSG_000 wxT( "  Creator of Firmware for Modules" )
 //#define MSG_001 wxT( "" )
 //#define MSG_002 wxT( "" )
 //#define MSG_003 wxT( "" )

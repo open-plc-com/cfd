@@ -1,8 +1,8 @@
 /*
 	Name:			gbl.h
-	Purpose:		MIOC
+	Purpose:		CFM
 	Author:			www.open-plc.com
-	Created:		2019/07
+	Created:		2020/07
 	Modified by:
 	RCS-ID:
 	Copyright:		(c) Open-PLC
@@ -39,6 +39,7 @@ static wxString		WORK_PATH;
 static wxChar		PATH_SEP;
 static wxString		S_NAME;
 static wxString		S_EXT;
+static wxString		PROJECT_DIR;
 
 static bool			Win_MaxSize			= false;
 static bool			Read_Win_MaxSize	= false;
@@ -58,7 +59,7 @@ static volatile unsigned int	FW_SN	= 0;
 static wxString SEL_PORT[MAX_PORT_NN];
 
 static int				COM_NN			= -1;
-//static int				COM_SPEED		= -1;
+static int				COM_SPEED		= -1;
 //DataIO_Com				*IO_COM			= new DataIO_Com();
 static volatile bool	ENABLE_CONNECT	= false;
 static volatile bool	TRY_TO_CONNECT	= false;
@@ -67,7 +68,15 @@ static volatile bool	RUN				= false;
 
 static int				UART1_SPEED		= -1;
 
-wxGrid *c_grid;
+//wxGrid *c_grid;
+
+const wxString DEV_TYPES[] =
+{
+	wxT( "STM32F103C8T6" ),
+	wxT( "STM32F303CBT6" ),
+	wxT( "STM32F303CBT6/PLC" ),
+//	wxT( "" ),
+};
 
 const wxString VAR_1XX_TYPES[] =
 {
@@ -83,12 +92,14 @@ const wxString VAR_1XX_TYPES[] =
 	wxT( "unsigned int64" ),
 	wxT( "float" ),
 	wxT( "double" ),
+
 	wxT( "GPIO_Mode_AIN" ),
 	wxT( "GPIO_Mode_IN_FLOATING" ),
 	wxT( "GPIO_Mode_IPD" ),
 	wxT( "GPIO_Mode_IPU" ),
 	wxT( "GPIO_Mode_Out_OD" ),
 	wxT( "GPIO_Mode_Out_PP" ),
+
 	wxT( "DS18B20" ),
 	wxT( "iButton" ),
 	wxT( "LCD_1602_STR_1" ),
@@ -114,28 +125,27 @@ GPIO_Mode_AF_OD         — Open drain output for alternative functions.
 GPIO_Mode_AF_PP         — The same as before, but with two states.
 */
 
-/*
+///*
 const wxString VAR_3XX_TYPES[] =
 {
-	wxT("bool"),
-	wxT("int8"),
-	wxT("unsigned int8"),
-	wxT("int16"),
-	wxT("unsigned int16"),
-	wxT( wxEmptyString ),
-	wxT("int32"),
-	wxT("unsigned int32"),
-	wxT("int64"),
-	wxT("unsigned int64"),
-	wxT("float"),
-	//wxT("GPIO_Mode_AIN"),
-	//wxT("GPIO_Mode_IN_FLOATING"),
-	//wxT("GPIO_Mode_IPD"),
-	//wxT("GPIO_Mode_IPU"),
-	//wxT("GPIO_Mode_Out_OD"),
-	//wxT("GPIO_Mode_Out_PP"),
-	//wxT("DS18B20"),
-	//wxT("iButton"),
+	wxT( "bool" ),
+	wxT( "int8" ),
+	wxT( "unsigned int8" ),
+	wxT( "int16" ),
+	wxT( "unsigned int16" ),
+	wxT( "int32" ),
+	wxT( "unsigned int32" ),
+	wxT( "int64" ),
+	wxT( "unsigned int64" ),
+	wxT( "float" ),
+
+	wxT( "GPIO_Mode_IN" ),		// *!< GPIO Input Mode
+	wxT( "GPIO_Mode_OUT" ),		// *!< GPIO Output Mode
+	wxT( "GPIO_Mode_AF" ),		// *!< GPIO Alternate function Mode
+	wxT( "GPIO_Mode_AN" ),		// *!< GPIO Analog In/Out Mode
+
+//	wxT( "DS18B20" ),
+//	wxT( "iButton" ),
 //	wxT( "LCD_1602_STR_1" ),
 //	wxT( "LCD_1602_STR_2" ),
 //	wxT( "BME_T" ),
@@ -144,9 +154,23 @@ const wxString VAR_3XX_TYPES[] =
 //	wxT( "BH_L" ),
 //	wxT( "CCS_CO2" ),
 //	wxT( "CCS_TVOC" ),
-	//wxT(""),
+//	wxT( "" ),
+//	wxT( wxEmptyString ),
 };
-*/
+
+const wxString VAR_3XX_O_TYPES[] =
+{
+	wxT( "GPIO_OType_PP" ),
+	wxT( "GPIO_OType_OD" ),
+};
+
+const wxString VAR_3XX_PUPD_TYPES[] =
+{
+	wxT( "GPIO_PuPd_NOPULL" ),
+	wxT( "GPIO_PuPd_UP" ),
+	wxT( "GPIO_PuPd_DOWN" ),
+};
+//*/
 
 wxTextCtrl *_log;
 

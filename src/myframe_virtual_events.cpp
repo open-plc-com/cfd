@@ -14,39 +14,119 @@
 // Virtual event handlers
 // ===========================================================================
 
-
-void MyFrame::OnAuiChanged( wxAuiNotebookEvent& event )
+void MyFrame::OnDevGridLeftDClick( wxGridEvent& event )
 {
-int n1;
-wxString s;
+_log->AppendText( wxT( "OnDevGridLeftDClick\n" ) );
+event.Skip();
+}
 
-n1 = m_auinotebook->GetSelection();
-//n2 = m_auinotebook->GetPageIndex( m_device_panel );
-//if( n1 == 2 )
-//{
-//m_tool_data->Hide();
-//m_grid->Hide();
-//s.Printf( wxT( "n1=%d\n" ), n1 );
-//_log->AppendText( s );
-//}
+void MyFrame::OnDevGridLeftClick( wxGridEvent& event )
+{
+	unsigned int	row, col;
+	unsigned int	row_label;
+	wxString		s;
 
-//int row, col;
+	row = event.GetRow();
+	col = event.GetCol();
 
-//row = 0;
+row_label = event.GetRow();
 
-	//row = event.GetRow();
-	//col = event.GetCol();
 
-//s.Printf( wxT( "row=%d, col=%d\n" ), row, col );
+s.Printf( wxT( "row=%d, col=%d label=%d\n" ), row, col, row_label );
+_log->AppendText( s );
 
-//_log->AppendText( s );
-
-//_log->AppendText( wxT( "on1\n" ) );
-//if(n1)
 
 event.Skip();
-
 }
+
+void MyFrame::OnDevGridLabelLeftClick( wxGridEvent& event )
+{
+wxString s;
+int i;
+i = event.GetRow();
+s.Printf( wxT( "Row=%d\n" ), i );
+_log->AppendText( s );
+//m_grid->SelectBlock(-1,-1,-1,-1);
+
+event.Skip();
+}
+
+
+//void MyFrame::OnAuiChanged( wxAuiNotebookEvent& event )
+//{
+//int n1;
+//int row;
+//wxString s;
+//
+////m_header->Disable();
+//
+//
+//n1 = m_auinotebook->GetSelection();
+////n2 = m_auinotebook->GetPageIndex( m_config_panel );
+////if( n1 == m_auinotebook->GetPageIndex( m_config_panel ) )
+////if( n1 == m_auinotebook->GetPageIndex( m_device_panel ) )
+////if( n1 == 3 ) conf_changed = true;
+////if( ( n1 == 0 ) && conf_changed )
+////{
+////m_dev_grid->ClearGrid();
+////m_dev_grid->DeleteRows(0, 3);
+////Refresh();
+////conf_changed = false;
+//
+//
+//
+////m_tool_data->Show(false);
+////m_grid->Show(false);
+////m_staticline18->Show(false);
+////m_staticline1->Show(false);
+////Refresh();
+//
+//
+//
+//
+////m_auinotebook->SetSelection( n2 );
+////s.Printf( wxT( "n1=%d n2=%d\n" ), n1, n2 );
+//s.Printf( wxT( "n1=%d\n" ), n1 );
+//_log->AppendText( s );
+////}
+////else
+////event.Skip();
+//
+////int row, col;
+//
+////row = 0;
+//
+//	//row = event.GetRow();
+//	//col = event.GetCol();
+//
+////s.Printf( wxT( "row=%d, col=%d\n" ), row, col );
+//
+////_log->AppendText( s );
+//
+////_log->AppendText( wxT( "on1\n" ) );
+////if(n1)
+//
+//event.Skip();
+//
+//}
+
+
+//void MyFrame::OnConfToolClicked( wxCommandEvent& event )
+//{
+////m_auinotebook->SetSelection( 2 );
+//_log->AppendText( wxT( ">>>\n" ) );
+////event.Skip();
+//}
+
+
+
+
+
+
+//void MyFrame::OnTableToolClicked( wxCommandEvent& event )
+//{
+//m_auinotebook->SetSelection( 2 );
+//}
 
 
 

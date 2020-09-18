@@ -1,8 +1,8 @@
 /*
 	Name:			myframe.h
-	Purpose:		MIOC
+	Purpose:		CFM
 	Author:			www.open-plc.com
-	Created:		2019/07
+	Created:		2020/07
 	Modified by:
 	RCS-ID:
 	Copyright:		(c) Open-PLC
@@ -42,6 +42,21 @@ class MyFrame : public MyFrameFB
 //		wxString				 cs5[3];
 		wxArrayString			 port_list;
 
+//volatile bool	conf_changed;
+
+		int		OnPathInit();
+//		int		Read_Prj();
+//		void	Write_Prj();
+		int		Read_Cfg();
+		void	Write_Cfg();
+
+
+		void OnMaximized( wxMaximizeEvent &event );
+		void OnSize( wxSizeEvent &event );
+		void OnMove( wxMoveEvent &event );
+
+
+
 void Init_Grid_Dev( void );
 //void Init_Grid_Dev( void );
 
@@ -63,11 +78,6 @@ void Init_Grid_Dev( void );
 ////		DataIO_Com		*io_com;
 //
 //		void	Help( char *str, int len );
-//		int		OnPathInit();
-//		int		Read_Prj();
-//		void	Write_Prj();
-//		int		Read_Cfg();
-//		void	Write_Cfg();
 //
 //		// Config
 //		void	Disable_Config( void );
@@ -89,16 +99,17 @@ void Init_Grid_Dev( void );
 ////void Set_MDK_prj_stm32f103c8( wxString *buf, wxString prj_name );
 
 		// Static event handlers
+
+ 		void OnTool_Edit_Conf( wxCommandEvent &event );
+
+
+
 // 		void OnTool_New_Prj( wxCommandEvent &event );
 //		void OnTool_Open_Prj( wxCommandEvent &event );
 //		void OnTool_Close_Prj( wxCommandEvent &event );
 // 		void OnTool_Save_Prj( wxCommandEvent &event );
 // 		void OnExit( wxCommandEvent &event );
-//
-//		void OnMaximized( wxMaximizeEvent &event );
-//		void OnSize( wxSizeEvent &event );
-//		void OnMove( wxMoveEvent &event );
-//
+
 //		void OnTool_COM_config( wxCommandEvent &event );
 //		void OnTool_UART1_config( wxCommandEvent &event );
 //		void OnTool_UART_help( wxCommandEvent &event );
@@ -135,7 +146,11 @@ void Init_Grid_Dev( void );
 //		void ZoneSize( wxCommandEvent &event );
 
 		// Virtual event handlers
-		void OnAuiChanged( wxAuiNotebookEvent& event );
+//		void OnAuiChanged( wxAuiNotebookEvent& event );
+		void OnDevGridLeftDClick( wxGridEvent& event );
+		void OnDevGridLeftClick( wxGridEvent& event );
+		void OnDevGridLabelLeftClick( wxGridEvent& event );
+//		void OnConfToolClicked( wxCommandEvent& event );
 
 //		void On_check_UART1( wxCommandEvent &event );
 //		void On_check_USB_VCP( wxCommandEvent &event );
