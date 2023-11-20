@@ -85,6 +85,7 @@ class Shape : public wxScrolledWindow
 
 		std::vector<Shape_Struct> *shape_obj;
 		int block_id;
+		wxString block_name;
 
 };
 

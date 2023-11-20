@@ -163,93 +163,129 @@ void MyFrame::Make_Obj( int block_id, wxString obj_name,
                         std::vector <Link_Point_Struct> &Link_Point_Ptr )
 // ============================================================================
 {
-	unsigned int i, n, n1, n2;
-	unsigned int size_w, size_h; // size of blank
-	unsigned int max_x, max_y, size_obj_name, w, h;
-	//Shape_Struct shape_obj;
-	wxMemoryDC   mem_dc;
-	wxSize       sz;
+    unsigned int        i, n, n1, n2;
+    unsigned int        size_w, size_h; // size of blank
+    int                 size_in, size_out;
+    int                 x, y;
+    unsigned int        size_obj_name, w, h;
+    wxMemoryDC          mem_dc;
+    wxSize              sz;
+    wxString            s;
+    std::string         ss;
+    Link_Point_Struct   lp;
 
-	Shape_Ptr.clear();
-	Link_Point_Ptr.clear();
-	Shape_Ptr.resize( 1 );
+    wxFont font = wxFont( FONT_SIZE,
+                          wxFONTFAMILY_DEFAULT,
+                          wxFONTSTYLE_NORMAL,
+                          wxFONTWEIGHT_NORMAL,
+                          false,
+                          wxEmptyString );
+    mem_dc.SetFont( font );
 
-	wxFont font = wxFont( FONT_SIZE,
-						  wxFONTFAMILY_DEFAULT,
-						  wxFONTSTYLE_NORMAL,
-						  wxFONTWEIGHT_NORMAL,
-						  false,
-						  wxEmptyString );
-	mem_dc.SetFont( font );
+    sz = mem_dc.GetTextExtent( wxString::Format( wxT("W") ) ); // get size of blank
+    s = wxT( "W" );
+    sz = mem_dc.GetTextExtent( s );
+    size_w = sz.GetWidth();
+    size_h = sz.GetHeight();
 
-printf( "\n" );
+    sz = mem_dc.GetTextExtent( obj_name );
+    size_obj_name = sz.GetWidth() + size_w*2;
 
-	sz = mem_dc.GetTextExtent( wxString::Format( wxT("W") ) );
-	printf( "w2=%d h2=%d\n", sz.GetWidth(), sz.GetHeight() );
-	size_w = sz.GetWidth();
-	size_h = sz.GetHeight();
-
-printf( "Block_ID=%d\n", block_id );
-printf( "obj_name=%s\n", (const char*) obj_name.c_str());
-
-	sz = mem_dc.GetTextExtent( obj_name );
-	size_obj_name = sz.GetWidth() + size_w*2;
-	//Shape_Ptr[0].Name_POU = obj_name;
-	//Shape_Ptr[0].Anchor = wxPoint( 0, 0 );
-
-	n1 = 0;
-	n2 = 0;
-	max_x = 0;
-	max_y = 0;
-	for( i = 0; i < IN_OUT_Decode_Ptr.size(); i++ )
-	{
+    n1 = 0;
+    n2 = 0;
+    size_in = 0;
+    size_out = 0;
+    for( i = 0; i < IN_OUT_Decode_Ptr.size(); i++ )
+    {
 //printf( "Nn=%d InOut=%d Type=%s Name=%s\n", IN_OUT_Decode_Ptr[i].Nn,
 //                                            IN_OUT_Decode_Ptr[i].InOut,
 //                                            IN_OUT_Decode_Ptr[i].Type.c_str(),
 //                                            IN_OUT_Decode_Ptr[i].Name.c_str() );
+        s = IN_OUT_Decode_Ptr[i].Name.c_str();
+        sz = mem_dc.GetTextExtent( s );
 
-		if( IN_OUT_Decode_Ptr[i].InOut == 1 )
-		{
-			n1++;
-		}
-		else
-		if( IN_OUT_Decode_Ptr[i].InOut == 2 )
-		{
-			n2++;
-		}
+        if( IN_OUT_Decode_Ptr[i].InOut == 1 )
+        {
+            n1++;
+            if( sz.x > size_in )
+            {
+                size_in = sz.x;
+            }
+        }
+        else
+        if( IN_OUT_Decode_Ptr[i].InOut == 2 )
+        {
+            n2++;
+            if( sz.x > size_out )
+            {
+                size_out = sz.x;
+            }
+        }
+    }
 
-	}
+    if( n1 > n2 )
+    {
+        n = n1;
+    }
+    else
+    {
+        n = n2;
+    }
 
-//		sz = mem_dc.GetTextExtent( IN_OUT_Decode_Ptr[i].Name );
-////printf( "name=%s\n", (const char*) IN_OUT_Decode_Ptr[i].Name.c_str());
-////printf( "w2=%d h2=%d\n", sz.GetWidth(), sz.GetHeight() );
-//		w = sz.GetWidth();
-//		h = sz.GetHeight();
-//		if( w > max_x )
-//		{
-//			max_x = w;
-//		}
-//		if( h > max_y )
-//		{
-//			max_y = h;
-//		}
-//	}
-////printf( "n1=%d n2=%d\n", n1, n2 );
-////printf( "\n" );
-//
-////sz = mem_dc.GetTextExtent( wxString::Format( wxT("W") ) );
-////shape_obj.Size = wxPoint( 100, 100 );
-//
-//	if( n1 > n2 )
-//	{
-//		n = n1;
-//	}
-//	else
-//	{
-//		n = n2;
-//	}
+    w = size_in + size_out;
+    if( size_obj_name > w )
+    {
+        w = size_obj_name;
+    }
 
+    w += (size_w*3);
+    h = ( size_h * (n+2) ) * 3 / 2;
+    sz = mem_dc.GetTextExtent( obj_name );
+    x = ( w - sz.GetWidth() ) / 2;
+    y = size_h / 2;
 
+//Shape_Ptr[0].ID = ???
+    Shape_Ptr[0].Block_ID = block_id;
+    Shape_Ptr[0].Name_POU = obj_name;
+    Shape_Ptr[0].Name_POU_Pos = wxPoint( x, y );
+    Shape_Ptr[0].Anchor = wxPoint( 0, 0 );
+    Shape_Ptr[0].Size = wxPoint( w, h );
+    Shape_Ptr[0].Min_Size = wxPoint( w, h );
+    Shape_Ptr[0].Size_W = size_w;
+    Shape_Ptr[0].Size_H = size_h;
+
+    y = (size_h / 2) + (size_h * 2);
+
+    for( i = 0; i < IN_OUT_Decode_Ptr.size(); i++ )
+    {
+        if( IN_OUT_Decode_Ptr[i].InOut == 1 ) // In
+        {
+            lp.Name_IO = IN_OUT_Decode_Ptr[i].Name.c_str();
+            lp.Type = IN_OUT_Decode_Ptr[i].Type;
+            lp.In_Out = IN_OUT_Decode_Ptr[i].InOut;
+            lp.Pos = wxPoint( -size_w, (y+(size_h/2)) ); // link point pos
+            lp.Name_IO_Pos = wxPoint( size_w, y );       // rectangle pos of Name
+
+            y += ( size_h + (size_h/2) );
+            Link_Point_Ptr.push_back( lp );
+        }
+    }
+
+    y = (size_h / 2) + (size_h * 2);
+    for( i = 0; i < IN_OUT_Decode_Ptr.size(); i++ )
+    {
+        if( IN_OUT_Decode_Ptr[i].InOut == 2 ) // Out
+        {
+            lp.Name_IO = IN_OUT_Decode_Ptr[i].Name.c_str();
+            lp.Type = IN_OUT_Decode_Ptr[i].Type;
+            lp.In_Out = IN_OUT_Decode_Ptr[i].InOut;
+            lp.Pos = wxPoint( 0, (y+(size_h/2)) ); // Calculate X as size_w on draw
+            lp.Name_IO_Pos = wxPoint( size_w, y );
+
+            y += ( size_h + (size_h/2) );
+            Link_Point_Ptr.push_back( lp );
+        }
+    }
 }
 // ============================================================================
 

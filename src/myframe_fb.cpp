@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////
+// C++ code generated with wxFormBuilder (version 3.10.1-0-g8feb16b3)
+// http://www.wxformbuilder.org/
+//
+// PLEASE DO *NOT* EDIT THIS FILE!
+///////////////////////////////////////////////////////////////////////////
+
 #include "myframe_fb.h"
 
 #include "pict/add.xpm"
@@ -629,8 +636,9 @@ ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, 
 	m_static_text2->Wrap( -1 );
 	bSizer14->Add( m_static_text2, 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxLEFT, 5 );
 
-	wxArrayString m_choiceChoices;
-	m_choice = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxSize( 60,-1 ), m_choiceChoices, 0 );
+	wxString m_choiceChoices[] = { wxT("1"), wxT("2"), wxT("3"), wxT("4"), wxEmptyString };
+	int m_choiceNChoices = sizeof( m_choiceChoices ) / sizeof( wxString );
+	m_choice = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxSize( 60,-1 ), m_choiceNChoices, m_choiceChoices, 0 );
 	m_choice->SetSelection( 0 );
 	bSizer14->Add( m_choice, 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxLEFT, 5 );
 
@@ -683,6 +691,7 @@ ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, 
 
 	// Connect Events
 	m_tree->Connect( wxEVT_COMMAND_TREE_SEL_CHANGED, wxTreeEventHandler( ObjPropsFB::OnPOUTreeSelChanged ), NULL, this );
+	m_choice->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( ObjPropsFB::OnChoise ), NULL, this );
 	m_button_ok->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ObjPropsFB::onOK ), NULL, this );
 	m_button_cancel->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ObjPropsFB::OnCANCEL ), NULL, this );
 }
@@ -691,6 +700,7 @@ ObjPropsFB::~ObjPropsFB()
 {
 	// Disconnect Events
 	m_tree->Disconnect( wxEVT_COMMAND_TREE_SEL_CHANGED, wxTreeEventHandler( ObjPropsFB::OnPOUTreeSelChanged ), NULL, this );
+	m_choice->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( ObjPropsFB::OnChoise ), NULL, this );
 	m_button_ok->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ObjPropsFB::onOK ), NULL, this );
 	m_button_cancel->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ObjPropsFB::OnCANCEL ), NULL, this );
 

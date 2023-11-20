@@ -1,12 +1,12 @@
 /*
-	Name:			myframe_virtual_events.cpp
-	Purpose:		Open-PLC Tools
-	Author:			www.open-plc.com
-	Created:		20YY/MM
-	Modified by:
-	RCS-ID:
-	Copyright:		(c) Open-PLC
-	Licence:		The MIT License (MIT)
+    Name:        myframe_virtual_events.cpp
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/11
+    Modified by:
+    RCS-ID:
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
 */
 
 
@@ -44,7 +44,9 @@ void MyFrame::OnPrjSelectCell( wxGridEvent &event )
 		s = m_prj_tree->GetCellValue( row, (n-1) );
 		s.ToLong( &l );
 		Block_ID = l;
+		Block_Name = wxEmptyString;
 		m_shape->block_id = l;
+		m_shape->block_name = Block_Name;
 		s = m_prj_tree->GetCellValue( row, (n-2) );
 		m_prj_tool->EnableTool( ID_PRJ_EDIT, false );
 
@@ -120,6 +122,8 @@ void MyFrame::OnPrjSelectCell( wxGridEvent &event )
 		if( s == wxT( "ST" ) )
 		{
 			s_name = m_prj_tree->GetCellValue( row, 4 );
+			Block_Name = s_name;
+			m_shape->block_name = Block_Name;
 			s_name = wxT( "(ST) Function block name: " ) + s_name;
 			m_edit_name->SetLabel( s_name );
 
@@ -144,6 +148,8 @@ void MyFrame::OnPrjSelectCell( wxGridEvent &event )
 		if( s == wxT( "FBD" ) )
 		{
 			s_name = m_prj_tree->GetCellValue( row, 4 );
+			Block_Name = s_name;
+			m_shape->block_name = Block_Name;
 			s_name = wxT( "(FBD) Function block name: " ) + s_name;
 			m_shape_name->SetLabel( s_name );
 			if( !Start )
@@ -168,6 +174,8 @@ void MyFrame::OnPrjSelectCell( wxGridEvent &event )
 		if( s == wxT( "LD" ) )
 		{
 			s_name = m_prj_tree->GetCellValue( row, 4 );
+			Block_Name = s_name;
+			m_shape->block_name = Block_Name;
 			s_name = wxT( "(LD) Function block name: " ) + s_name;
 			m_shape_name->SetLabel( s_name );
 			if( !Start )
@@ -241,22 +249,22 @@ void MyFrame::OnPrjSelectCell( wxGridEvent &event )
 void MyFrame::OnPrjSize( wxSizeEvent &event )
 // ============================================================================
 {
-	int w, h, m, w_set;
+    int w, h, m, w_set;
 
-	m_prj_tree->GetClientSize( &w, &h ); // <<<
-	m = m_prj_tree->GetColSize(0) + m_prj_tree->GetColSize(1) + m_prj_tree->GetColSize(2) + m_prj_tree->GetColSize(3);
+    m_prj_tree->GetClientSize( &w, &h );
+    m = m_prj_tree->GetColSize(0) + m_prj_tree->GetColSize(1) + m_prj_tree->GetColSize(2) + m_prj_tree->GetColSize(3);
 
-#ifdef SHOW_T1
-	w_set = w - m*2 - m_prj_tree->GetColSize(0); // For view info cells
+#ifdef SHOW_T1 // define in gbl.h
+    w_set = w - m*2 - m_prj_tree->GetColSize(0); // For view info cells
 #else
-	w_set = w - m;
-	if( w_set < m )
-	{
-		w_set = m;
-	}
+    w_set = w - m;
+    if( w_set < m )
+    {
+        w_set = m;
+    }
 #endif
 
-	m_prj_tree->SetColSize( 4, w_set );
-	event.Skip();
+    m_prj_tree->SetColSize( 4, w_set );
+    event.Skip();
 }
 // ============================================================================

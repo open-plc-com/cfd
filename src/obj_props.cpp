@@ -78,9 +78,16 @@ void ObjProps::OnPOUTreeSelChanged( wxTreeEvent &event )
 // ============================================================================
 {
     uint32_t i;
+    int      x, y, x1, y1, x2, y2;;
+    wxPen    p_pen;
+    wxPoint  p;
     wxString s;
 
     m_text->Clear();
+
+    Shape_Ptr->clear();
+    Link_Point_Ptr->clear();
+    Shape_Ptr->resize( 1 );
 
     SEL_POU = -1;
     if( event.GetItem() != m_tree->GetRootItem() )
@@ -107,57 +114,95 @@ void ObjProps::OnPOUTreeSelChanged( wxTreeEvent &event )
         }
     }
 
-	if( SEL_POU >= 0 )
-	{
-		IN_OUT_Decode( m_pou->at(SEL_POU).POU_InOut, *IN_OUT_Decode_Ptr );
-obj_name = m_pou->at(SEL_POU).Name;
-//printf( "IN_OUT_Decode_Ptr->size()=%d\n", IN_OUT_Decode_Ptr->size() );
-//printf( "obj_name=%s\n", (const char*) obj_name.c_str());
-Make_Obj( Block_ID, obj_name, *IN_OUT_Decode_Ptr, *Shape_Ptr, *Link_Point_Ptr );
-//*Shape_Ptr *Link_Point_Ptr
+    if( SEL_POU >= 0 )
+    {
+        IN_OUT_Decode( m_pou->at(SEL_POU).POU_InOut, *IN_OUT_Decode_Ptr );
+        obj_name = m_pou->at(SEL_POU).Name;
+        Make_Obj( Block_ID, obj_name, *IN_OUT_Decode_Ptr, *Shape_Ptr, *Link_Point_Ptr );
+    }
 
-	}
+    m_panel8->GetSize( &x, &y );
+    bm = wxBitmap( x, y );
+    mem_dc.SelectObject( bm );
+
+    wxFont font = wxFont( FONT_SIZE, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString );
+    p_pen.SetColour( 0, 0, 0 );
+    p_pen.SetWidth( 1 );
+
+    mem_dc.SetPen( p_pen );
+    mem_dc.SetFont( font );
+    mem_dc.SetBackground( *wxWHITE_BRUSH );
+    mem_dc.SetBackgroundMode( wxTRANSPARENT );
+    mem_dc.Clear();
+
+    p = Shape_Ptr->at(0).Size;
+    x1 = x/2 - p.x/2;
+    y1 = y/2 - p.y/2;
+    Shape_Ptr->at(0).Anchor = wxPoint( x1, y1 );
+    x2 = p.x;
+    y2 = p.y;
+    mem_dc.DrawRectangle( x1, y1, x2, y2 );
+
+    x1 = Shape_Ptr->at(0).Name_POU_Pos.x + Shape_Ptr->at(0).Anchor.x;
+    y1 = Shape_Ptr->at(0).Name_POU_Pos.y + Shape_Ptr->at(0).Anchor.y;
+    mem_dc.DrawText( Shape_Ptr->at(0).Name_POU, x1, y1 );
+
+    if( Link_Point_Ptr->size() > 0 )
+    {
+        wxSize sz = wxSize( ( Shape_Ptr->at(0).Size.x - (Shape_Ptr->at(0).Size_W) ), Shape_Ptr->at(0).Size_H );
+        wxRect rect;
+        rect.SetSize(sz);
+
+        y2 = ( (Shape_Ptr->at(0).Size_H*3/2) + Shape_Ptr->at(0).Anchor.y );
+        for( i = 0; i < Link_Point_Ptr->size(); i++ )
+        {
+            if( Link_Point_Ptr->at(i).In_Out == 1 )
+            {
+                s = Link_Point_Ptr->at(i).Name_IO.c_str();
+
+                x1 = Link_Point_Ptr->at(i).Name_IO_Pos.x;
+                y1 = Link_Point_Ptr->at(i).Name_IO_Pos.y;
+                rect.SetX(x1 + Shape_Ptr->at(0).Anchor.x );
+                rect.SetY(y1 + Shape_Ptr->at(0).Anchor.y );
+                mem_dc.DrawLabel( s, rect, wxALIGN_LEFT | wxALIGN_TOP );
+
+                x1 = Link_Point_Ptr->at(i).Pos.x + Shape_Ptr->at(0).Anchor.x;
+                y1 = Link_Point_Ptr->at(i).Pos.y + Shape_Ptr->at(0).Anchor.y;
+                x2 = Shape_Ptr->at(0).Anchor.x;
+                mem_dc.DrawLine( x1, y1, x2, y1 );
+            }
+
+            if( Link_Point_Ptr->at(i).In_Out == 2 )
+            {
+                s = Link_Point_Ptr->at(i).Name_IO.c_str();
+
+                x1 = Link_Point_Ptr->at(i).Name_IO_Pos.x - Shape_Ptr->at(0).Size_W;
+                y1 = Link_Point_Ptr->at(i).Name_IO_Pos.y;
+                rect.SetX(x1 + Shape_Ptr->at(0).Anchor.x );
+                rect.SetY(y1 + Shape_Ptr->at(0).Anchor.y);
+                mem_dc.DrawLabel( s, rect, wxALIGN_RIGHT | wxALIGN_TOP );
+
+                x1 = Shape_Ptr->at(0).Size.x + Shape_Ptr->at(0).Anchor.x;
+                x2 = x1 + Shape_Ptr->at(0).Size_W;
+                y1 = Link_Point_Ptr->at(i).Pos.y + Shape_Ptr->at(0).Anchor.y;
+                mem_dc.DrawLine( x1, y1, x2, y1 );
+            }
+        }
+    }
+
+    wxImage img = bm.ConvertToImage();
+    m_bitmap->SetBitmap( img );
+
+    event.Skip();
+}
+// ============================================================================
 
 
-int x, y;
-wxPen p_pen;
-
-
-m_panel8->GetSize( &x, &y );
-//printf( "Height=%d Width=%d\n", x, y );
-
-bm = wxBitmap( x, y );
-mem_dc.SelectObject( bm );
-
-
-
-
-//mem_dc.SetBrush( BG_COLOUR );
-//mem_dc.SetBackground( BG_COLOUR );
-
-wxFont font = wxFont( FONT_SIZE, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString );
-p_pen.SetColour( 0, 0, 0 );
-p_pen.SetWidth( 1 );
-
-mem_dc.SetPen( p_pen );
-mem_dc.SetFont( font );
-//mem_dc.SetBackground( wxBrush( GetBackgroundColour() ) );
-mem_dc.SetBackground( *wxWHITE_BRUSH );
-mem_dc.SetBackgroundMode( wxTRANSPARENT );
-mem_dc.Clear();
-
-mem_dc.DrawText( wxT( "Text" ), 10, 10 );
-mem_dc.DrawLine( 40,40,200,200 );
-
-wxImage img = bm.ConvertToImage();
-m_bitmap->SetBitmap( img );
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//wxSize sz;
-//sz = mem_dc.GetTextExtent( wxString::Format( wxT("W") ) );
-//printf( "w1=%d h1=%d\n", sz.GetWidth(), sz.GetHeight() );
-
+// ============================================================================
+void ObjProps::OnChoise( wxCommandEvent &event )
+// ============================================================================
+{
+printf( "ObjProps::OnChoise\n" );
 	event.Skip();
 }
 // ============================================================================
@@ -182,10 +227,12 @@ void ObjProps::OnChar( wxKeyEvent &event )
 void ObjProps::onOK( wxCommandEvent &event )
 // ============================================================================
 {
-printf( "ObjProps::onOK\n" );
-
+//printf( "\nObjProps::onOK\n" );
+//printf( "obj_name=%s Block_Name=%s\n", (const char*) obj_name.c_str(), (const char*) Block_Name.c_str() );
+// Check for obj_name & Block_Name
 
 	ON_OK = true;
+	//Close(); // ???
 	event.Skip();
 }
 // ============================================================================

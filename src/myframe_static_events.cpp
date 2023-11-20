@@ -99,6 +99,8 @@ m_pou_tree->Expand( pou_item_root );
 void MyFrame::OnF6( wxCommandEvent &event )
 // ============================================================================
 {
+int i;
+long l;
 //printf( "MyFrame::OnF6\n" );
 
 	ObjProps *dlg = new ObjProps( this );
@@ -108,9 +110,15 @@ void MyFrame::OnF6( wxCommandEvent &event )
 //dlg->m_choice->Show( false );
 //dlg->m_staticline6->Show( false );
 dlg->m_name->Disable();
-dlg->m_choice->Disable();
+//dlg->m_choice->Disable();
 
 //dlg->Fit();
+
+
+
+
+
+
 
 dlg->m_pou = &m_POU;
 
@@ -118,12 +126,14 @@ dlg->IN_OUT_Decode_Ptr = IN_OUT_Decode_Ptr;
 dlg->Shape_Ptr = Shape_Ptr;
 dlg->Link_Point_Ptr = Link_Point_Ptr;
 dlg->Block_ID = Block_ID;
+dlg->Block_Name = Block_Name;
 dlg->IN_OUT_Decode = IN_OUT_Decode;
 dlg->Make_Obj = Make_Obj;
 
 dlg->Fill_POU();
 
 dlg->ShowModal();
+
 //dlg->
 
 //dlg->m_pou = &m_POU;

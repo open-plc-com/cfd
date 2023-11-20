@@ -1,12 +1,12 @@
 /*
-	Name:			myframe.h
-	Purpose:		Open-PLC Tools
-	Author:			www.open-plc.com
-	Created:		20YY/MM
-	Modified by:
-	RCS-ID:
-	Copyright:		(c) Open-PLC
-	Licence:		The MIT License (MIT)
+    Name:        myframe.h
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/11
+    Modified by:
+    RCS-ID:
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
 */
 
 
@@ -33,17 +33,11 @@ class MyFrame : public MyFrameFB
         wxAuiManager m_mgr1;
 
     protected:
-        //enum MenuIDs
-        //{
-            //MENU_ID_CONTEXT_1 = 11001,
-            //MENU_ID_CONTEXT_2,
-            //MENU_ID_CONTEXT_3,
-        //};
-
-        int  Menu_Select;
-        int  Select_Row = 0;
-        int  Block_ID   = -1;
-        bool Start      = true;
+        int      Menu_Select;
+        int      Select_Row = 0;
+        int      Block_ID   = -1;
+        wxString Block_Name;
+        bool     Start      = true;
 
         bool SHIFT_KEY, ALT_KEY, CTRL_KEY = false;
         //bool m_POU_Select = false;
@@ -113,40 +107,40 @@ class MyFrame : public MyFrameFB
         int  Win_PosY    = 0;
         int  Win_SizeX   = 0;
         int  Win_SizeY   = 0;
-		int  Display_Resolution;
+        int  Display_Resolution;
 
         unsigned int LANG;
-		bool PRJ_CHANGED = false;
-		//int PRJ_SEL_ITEM = -1;
-        //unsigned int SCALE;
+        bool PRJ_CHANGED = false;
+        //int PRJ_SEL_ITEM = -1;
+        //unsigned int SCALE = 100;
         //unsigned int PAPE_TYPE; // 0=A0; 1=A1; 2=A2; 3=A3; 4=A4
         //unsigned int DPI = 2400;
 
         // POU tree
         struct POU_Struct POU_Tree;
 
-		wxTreeItemId pou_item_root, pou_item_prev;
-		std::vector <POU_Struct> m_POU;
+        wxTreeItemId pou_item_root, pou_item_prev;
+        std::vector <POU_Struct> m_POU;
 
-		std::vector <Shape_Struct> shape_obj;
-		std::vector <Shape_Struct> make_shape_obj;					// work vector; make new object
-		std::vector <Shape_Struct> *Shape_Ptr = &make_shape_obj;	// for pointer function (callback)
+        std::vector <Shape_Struct> shape_obj;
+        std::vector <Shape_Struct> make_shape_obj;                  // work vector; make new object
+        std::vector <Shape_Struct> *Shape_Ptr = &make_shape_obj;    // for pointer function (callback)
 
-		std::vector <Link_Point_Struct> link_point;
-		std::vector <Link_Point_Struct> make_link_point;					// work vector; make new link points
-		std::vector <Link_Point_Struct> *Link_Point_Ptr = &make_link_point;	// for pointer function (callback)
+        std::vector <Link_Point_Struct> link_point;
+        std::vector <Link_Point_Struct> make_link_point;                    // work vector; make new link points
+        std::vector <Link_Point_Struct> *Link_Point_Ptr = &make_link_point; // for pointer function (callback)
 
-		std::vector <IN_OUT_Decode_Struct> IN_OUT_Decode_Vect;
-		std::vector <IN_OUT_Decode_Struct> *IN_OUT_Decode_Ptr = &IN_OUT_Decode_Vect; // for pointer function (callback)
+        std::vector <IN_OUT_Decode_Struct> IN_OUT_Decode_Vect;
+        std::vector <IN_OUT_Decode_Struct> *IN_OUT_Decode_Ptr = &IN_OUT_Decode_Vect; // for pointer function (callback)
 
-		// Functions as pointer
-		static void IN_OUT_Decode( std::string, // POU_InOut
-								   std::vector <IN_OUT_Decode_Struct>& );
+        // Functions as pointer
+        static void IN_OUT_Decode( std::string, // POU_InOut
+                                   std::vector <IN_OUT_Decode_Struct>& );
 
-		static void Make_Obj( int,  wxString, // Block_ID, obj_name
-							   std::vector <IN_OUT_Decode_Struct>&,
-							   std::vector <Shape_Struct>&,
-							   std::vector <Link_Point_Struct>& );
+        static void Make_Obj( int,  wxString, // Block_ID, obj_name
+                               std::vector <IN_OUT_Decode_Struct>&,
+                               std::vector <Shape_Struct>&,
+                               std::vector <Link_Point_Struct>& );
 };
 // ============================================================================
 

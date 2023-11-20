@@ -40,7 +40,7 @@ class ObjProps : public ObjPropsFB
                   const wxString &title = wxEmptyString,
                   const wxPoint  &pos = wxDefaultPosition,
 //                const wxSize   &size = wxDefaultSize,
-                  const wxSize   &size  = wxSize( 640, 480 ),
+                  const wxSize   &size  = wxSize( 800, 600 ),
 //                long           style = wxDEFAULT_DIALOG_STYLE );
                   long           style = wxCAPTION |
                                          wxCLOSE_BOX |
@@ -54,27 +54,27 @@ class ObjProps : public ObjPropsFB
 		void OnPOUTreeSelChanged( wxTreeEvent &event ); // virtual
         void onOK( wxCommandEvent &event );             // Virtual
         void OnCANCEL( wxCommandEvent &event );         // Virtual
+		void OnChoise( wxCommandEvent& event );         // Virtual
 
-        wxTreeItemId pou_item_root, pou_item_prev;
-		std::vector<POU_Struct> *m_pou;
-
-//std::vector <IN_OUT_Decode_Struct> IN_OUT_Decode_Vect;
+        wxTreeItemId			pou_item_root, pou_item_prev;
+		std::vector<POU_Struct>	*m_pou;
 
 		// point to vectors (myframe.h)
-		std::vector <IN_OUT_Decode_Struct> *IN_OUT_Decode_Ptr; // = &IN_OUT_Decode_Vect
-		std::vector <Shape_Struct> *Shape_Ptr;                 // = &Shape_Ptr
-		std::vector <Link_Point_Struct> *Link_Point_Ptr;       // = &Link_Point_Ptr
+		std::vector <IN_OUT_Decode_Struct>	*IN_OUT_Decode_Ptr;	// = &IN_OUT_Decode_Vect
+		std::vector <Shape_Struct>			*Shape_Ptr;			// = &Shape_Ptr
+		std::vector <Link_Point_Struct>		*Link_Point_Ptr;	// = &Link_Point_Ptr
 
 		// pointer functions (myframe.cpp)
 		void (*IN_OUT_Decode)( std::string, std::vector <IN_OUT_Decode_Struct>& );
 		void (*Make_Obj)( int, wxString,
-			std::vector <IN_OUT_Decode_Struct>&,
-			std::vector <Shape_Struct>&,
-			std::vector <Link_Point_Struct>& );
+						std::vector <IN_OUT_Decode_Struct>&,
+						std::vector <Shape_Struct>&,
+						std::vector <Link_Point_Struct>& );
 
-		bool ON_OK = false;
-		unsigned int  Block_ID;
-		wxString obj_name;
+		bool			ON_OK = false;
+		unsigned int	Block_ID;
+		wxString		Block_Name;
+		wxString		obj_name;
 };
 // ============================================================================
 

@@ -27,7 +27,7 @@
 #endif // WIN32
 
 #define OPT_VER "000"
-//#define SHOW_T1 // Show hidden cells in prj tree
+#define SHOW_T1 // Show hidden cells in prj tree
 
 #define FONT_SIZE 10
 
@@ -63,57 +63,68 @@ enum MenuIDs
 struct Line_Struct
 {
 	unsigned int Nn;
-	unsigned int Shape_ID_1; // reference to shape 1
-	unsigned int Shape_ID_2; // reference to shape 2
-	wxPoint      Pt_1;       // Segment starting point
-	wxPoint      Pt_2;       // Segment end point
+	unsigned int Shape_ID_1;	// reference to shape 1
+	unsigned int Shape_ID_2;	// reference to shape 2
+	wxPoint      Pt_1;			// Segment starting point
+	wxPoint      Pt_2;			// Segment end point
+	wxPoint      Pt_1_Def;		// Segment starting point
+	wxPoint      Pt_2_Def;		// Segment end point
 	bool         Selected;
 };
 
 struct Link_Point_Struct
 {
-	unsigned int Nn;
-	unsigned int Shape_ID; // reference to shape Id
-	unsigned int In_Out;   // in=1 out=2
-	wxPoint      Pos;      // Point position
-	wxString     Name_IO;  // in/out name
-	wxString     Name_Obj; // POU name
-	wxString     Type;
-	wxString     Name;
+    unsigned int Nn;
+    unsigned int Shape_ID;        // reference to shape Id
+    unsigned int In_Out;          // in=1 out=2
+    wxPoint      Pos;             // Point position
+    wxPoint      Pos_Def;         // Point position define
+    wxString     Name_IO;         // in/out name
+    wxPoint      Name_IO_Pos;     // Point position of Name
+    wxPoint      Name_IO_Pos_Def; // Point position of Name define
+    //wxString   Name_Obj;        // POU name
+    wxString     Type;
+    //wxString   Name;
 };
 
 struct Shape_Struct
 {
-    unsigned int ID;           // Unique shape ID
-    unsigned int Block_ID;     // Nn of block in project (m_prj_tree)
-    wxString     Name;         // Name in project
-    wxPoint      Name_Pos;     // Position of name
-    wxString     Name_POU;     // POU Name
-    wxPoint      Name_POU_Pos; //
+    unsigned int ID;               // Unique shape ID
+    unsigned int Block_ID;         // Nn of block in project (m_prj_tree)
+    wxString     Name;             // Name in project
+    wxPoint      Name_Pos;         // Position of name
+    wxPoint      Name_Pos_Def;     // Position of name
+    wxString     Name_POU;         // POU Name
+    wxPoint      Name_POU_Pos;     //
+    wxPoint      Name_POU_Pos_Def; //
     wxPoint      Anchor;
+    wxPoint      Anchor_Def;
     wxPoint      Size;
+    wxPoint      Size_Def;
     wxPoint      Min_Size;
+    wxPoint      Min_Size_Def;
     unsigned int Min_Input_Nn;
     unsigned int Max_Input_Nn;
+    unsigned int Size_W, Size_H;   // size of blank
     bool         Selected;
 };
 
 struct POU_Struct
 {
-	int          Nn;
-	int          Level;
-	std::string  Name;
-	std::string  Comment;
-	std::string  POU_InOut;
-	wxTreeItemId Tree_Id;
+    int          Nn;
+    int          Level;
+    std::string  Name;
+    std::string  Comment;
+    std::string  POU_InOut;
+    wxTreeItemId Tree_Id;
 };
 
 struct IN_OUT_Decode_Struct
 {
-	int         Nn;
-	int         InOut; // 1-In; 2-Out
-	std::string Type;
-	std::string Name;
+    int         Nn;
+    int         InOut; // 1-In; 2-Out
+    std::string Type;
+    std::string Name;
 };
 
 

@@ -1,12 +1,12 @@
 /*
-	Name:			pou_tree.h
-	Purpose:		Open-PLC Tools
-	Author:			www.open-plc.com
-	Created:		20YY/MM
-	Modified by:
-	RCS-ID:
-	Copyright:		(c) Open-PLC
-	Licence:		The MIT License (MIT)
+    Name:        pou_tree.h
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/11
+    Modified by:
+    RCS-ID:
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
 */
 
 
@@ -221,143 +221,143 @@
 
 // --- 4 Mathematical functions ---
 
-#define NN_0401			401
-#define LVL_0401		1
-#define NAME_0401		"Mathematical functions"
-#define RU_NAME_0401	"Математические функции"
+#define NN_0401         401
+#define LVL_0401        1
+#define NAME_0401       "Mathematical functions"
+#define RU_NAME_0401    "Математические функции"
 
-#define NN_0402			402
-#define LVL_0402		2
-#define NAME_0402		"ABS"
-#define COMMENT_0402	"Absolute number"
-#define RU_COMMENT_0402	"Абсолютный номер"
-#define POU_INOUT_0402	"(ANY_NUM:IN) => (ANY_NUM:OUT)"
+#define NN_0402         402
+#define LVL_0402        2
+#define NAME_0402       "ABS"
+#define COMMENT_0402    "Absolute number"
+#define RU_COMMENT_0402 "Абсолютный номер"
+#define POU_INOUT_0402  "(ANY_NUM:IN) => (ANY_NUM:OUT)"
 
-#define NN_0403			403
-#define LVL_0403		2
-#define NAME_0403		"SQRT"
-#define COMMENT_0403	"Square root"
-#define RU_COMMENT_0403	"Квадратный корень"
-#define POU_INOUT_0403	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0403         403
+#define LVL_0403        2
+#define NAME_0403       "SQRT"
+#define COMMENT_0403    "Square root"
+#define RU_COMMENT_0403 "Квадратный корень"
+#define POU_INOUT_0403  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0404			404
-#define LVL_0404		2
-#define NAME_0404		"LN"
-#define COMMENT_0404	"Natural logarithm"
-#define RU_COMMENT_0404	"Натуральный логарифм"
-#define POU_INOUT_0404	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0404         404
+#define LVL_0404        2
+#define NAME_0404       "LN"
+#define COMMENT_0404    "Natural logarithm"
+#define RU_COMMENT_0404 "Натуральный логарифм"
+#define POU_INOUT_0404  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0405			405
-#define LVL_0405		2
-#define NAME_0405		"LOG"
-#define COMMENT_0405	"Decimal logarithm"
-#define RU_COMMENT_0405	"Десятичный логарифм"
-#define POU_INOUT_0405	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0405         405
+#define LVL_0405        2
+#define NAME_0405       "LOG"
+#define COMMENT_0405    "Decimal logarithm"
+#define RU_COMMENT_0405 "Десятичный логарифм"
+#define POU_INOUT_0405  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0406			406
-#define LVL_0406		2
-#define NAME_0406		"EXP"
-#define COMMENT_0406	"Take the exponent"
-#define RU_COMMENT_0406	"Взятие экспоненты"
-#define POU_INOUT_0406	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0406         406
+#define LVL_0406        2
+#define NAME_0406       "EXP"
+#define COMMENT_0406    "Take the exponent"
+#define RU_COMMENT_0406 "Взятие экспоненты"
+#define POU_INOUT_0406  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0407			407
-#define LVL_0407		2
-#define NAME_0407		"SIN"
-#define COMMENT_0407	"Sinus"
-#define RU_COMMENT_0407	"Синус"
-#define POU_INOUT_0407	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0407         407
+#define LVL_0407        2
+#define NAME_0407       "SIN"
+#define COMMENT_0407    "Sinus"
+#define RU_COMMENT_0407 "Синус"
+#define POU_INOUT_0407  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0408			408
-#define LVL_0408		2
-#define NAME_0408		"COS"
-#define COMMENT_0408	"Cosine"
-#define RU_COMMENT_0408	"Косинус"
-#define POU_INOUT_0408	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0408         408
+#define LVL_0408        2
+#define NAME_0408       "COS"
+#define COMMENT_0408    "Cosine"
+#define RU_COMMENT_0408 "Косинус"
+#define POU_INOUT_0408  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0409			409
-#define LVL_0409		2
-#define NAME_0409		"TAN"
-#define COMMENT_0409	"Tangent"
-#define RU_COMMENT_0409	"Тангенс"
-#define POU_INOUT_0409	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0409         409
+#define LVL_0409        2
+#define NAME_0409       "TAN"
+#define COMMENT_0409    "Tangent"
+#define RU_COMMENT_0409 "Тангенс"
+#define POU_INOUT_0409  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0410			410
-#define LVL_0410		2
-#define NAME_0410		"ASIN"
-#define COMMENT_0410	"Arcsine"
-#define RU_COMMENT_0410	"Арксинус"
-#define POU_INOUT_0410	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0410         410
+#define LVL_0410        2
+#define NAME_0410       "ASIN"
+#define COMMENT_0410    "Arcsine"
+#define RU_COMMENT_0410 "Арксинус"
+#define POU_INOUT_0410  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0411			411
-#define LVL_0411		2
-#define NAME_0411		"ACOS"
-#define COMMENT_0411	"Arc cosine"
-#define RU_COMMENT_0411	"Арккосинус"
-#define POU_INOUT_0411	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0411         411
+#define LVL_0411        2
+#define NAME_0411       "ACOS"
+#define COMMENT_0411    "Arc cosine"
+#define RU_COMMENT_0411 "Арккосинус"
+#define POU_INOUT_0411  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
-#define NN_0412			412
-#define LVL_0412		2
-#define NAME_0412		"ATAN"
-#define COMMENT_0412	"Arctangent"
-#define RU_COMMENT_0412	"Арктангенс"
-#define POU_INOUT_0412	"(ANY_REAL:IN) => (ANY_REAL:OUT)"
+#define NN_0412         412
+#define LVL_0412        2
+#define NAME_0412       "ATAN"
+#define COMMENT_0412    "Arctangent"
+#define RU_COMMENT_0412 "Арктангенс"
+#define POU_INOUT_0412  "(ANY_REAL:IN) => (ANY_REAL:OUT)"
 
 // --- 5 Mathematics ---
 
-#define NN_0501			501
-#define LVL_0501		1
-#define NAME_0501		"Mathematics"
-#define RU_NAME_0501	"Математика"
+#define NN_0501         501
+#define LVL_0501        1
+#define NAME_0501       "Mathematics"
+#define RU_NAME_0501    "Математика"
 
-#define NN_0502			502
-#define LVL_0502		2
-#define NAME_0502		"ADD"
-#define COMMENT_0502	"Addition"
-#define RU_COMMENT_0502	"Сложение"
-#define POU_INOUT_0502	"(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
+#define NN_0502         502
+#define LVL_0502        2
+#define NAME_0502       "ADD"
+#define COMMENT_0502    "Addition"
+#define RU_COMMENT_0502 "Сложение"
+#define POU_INOUT_0502  "(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
 
-#define NN_0503			503
-#define LVL_0503		2
-#define NAME_0503		"MUL"
-#define COMMENT_0503	"Multiplication"
-#define RU_COMMENT_0503	"Умножение"
-#define POU_INOUT_0503	"(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
+#define NN_0503         503
+#define LVL_0503        2
+#define NAME_0503       "MUL"
+#define COMMENT_0503    "Multiplication"
+#define RU_COMMENT_0503 "Умножение"
+#define POU_INOUT_0503  "(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
 
-#define NN_0504			504
-#define LVL_0504		2
-#define NAME_0504		"SUB"
-#define COMMENT_0504	"Subtraction"
-#define RU_COMMENT_0504	"Вычитание"
-#define POU_INOUT_0504	"(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
+#define NN_0504         504
+#define LVL_0504        2
+#define NAME_0504       "SUB"
+#define COMMENT_0504    "Subtraction"
+#define RU_COMMENT_0504 "Вычитание"
+#define POU_INOUT_0504  "(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
 
-#define NN_0505			505
-#define LVL_0505		2
-#define NAME_0505		"DIV"
-#define COMMENT_0505	"Division"
-#define RU_COMMENT_0505	"Деление"
-#define POU_INOUT_0505	"(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
+#define NN_0505         505
+#define LVL_0505        2
+#define NAME_0505       "DIV"
+#define COMMENT_0505    "Division"
+#define RU_COMMENT_0505 "Деление"
+#define POU_INOUT_0505  "(ANY_NUM:IN1, ANY_NUM:IN2) => (ANY_NUM:OUT)"
 
-#define NN_0506			506
-#define LVL_0506		2
-#define NAME_0506		"MOD"
-#define COMMENT_0506	"Remainder of the division"
-#define RU_COMMENT_0506	"Остаток от деления (modulo)"
-#define POU_INOUT_0506	"(ANY_INT:IN1, ANY_INT:IN2) => (ANY_INT:OUT)"
+#define NN_0506         506
+#define LVL_0506        2
+#define NAME_0506       "MOD"
+#define COMMENT_0506    "Remainder of the division"
+#define RU_COMMENT_0506 "Остаток от деления (modulo)"
+#define POU_INOUT_0506  "(ANY_INT:IN1, ANY_INT:IN2) => (ANY_INT:OUT)"
 
-#define NN_0507			507
-#define LVL_0507		2
-#define NAME_0507		"EXPT"
-#define COMMENT_0507	"Exponent"
-#define RU_COMMENT_0507	"Экспонента"
-#define POU_INOUT_0507	"(ANY_REAL:IN1, ANY_NUM:IN2) => (ANY_REAL:OUT)"
+#define NN_0507         507
+#define LVL_0507        2
+#define NAME_0507       "EXPT"
+#define COMMENT_0507    "Exponent"
+#define RU_COMMENT_0507 "Экспонента"
+#define POU_INOUT_0507  "(ANY_REAL:IN1, ANY_NUM:IN2) => (ANY_REAL:OUT)"
 
-#define NN_0508			508
-#define LVL_0508		2
-#define NAME_0508		"MOVE"
-#define COMMENT_0508	"Appropriation"
-#define RU_COMMENT_0508	"Присвоение"
-#define POU_INOUT_0508	"(ANY:IN) => (ANY:OUT)"
+#define NN_0508         508
+#define LVL_0508        2
+#define NAME_0508       "MOVE"
+#define COMMENT_0508    "Appropriation"
+#define RU_COMMENT_0508 "Присвоение"
+#define POU_INOUT_0508  "(ANY:IN) => (ANY:OUT)"
 
 // --- 6 Time ---
 
@@ -368,115 +368,115 @@
 
 // --- 7 Shear operations ---
 
-#define NN_0701			701
-#define LVL_0701		1
-#define NAME_0701		"Shear operations"
-#define RU_NAME_0701	"Сдвиговые операции"
+#define NN_0701         701
+#define LVL_0701        1
+#define NAME_0701       "Shear operations"
+#define RU_NAME_0701    "Сдвиговые операции"
 
-#define NN_0702			702
-#define LVL_0702		2
-#define NAME_0702		"SHL"
-#define COMMENT_0702	"Shift left"
-#define RU_COMMENT_0702	"Сдвиг влево"
-#define POU_INOUT_0702	"(ANY_BIT:IN, ANY_INT:N) => (ANY_BIT:OUT)"
+#define NN_0702         702
+#define LVL_0702        2
+#define NAME_0702       "SHL"
+#define COMMENT_0702    "Shift left"
+#define RU_COMMENT_0702 "Сдвиг влево"
+#define POU_INOUT_0702  "(ANY_BIT:IN, ANY_INT:N) => (ANY_BIT:OUT)"
 
-#define NN_0703			703
-#define LVL_0703		2
-#define NAME_0703		"SHR"
-#define COMMENT_0703	"Shift right"
-#define RU_COMMENT_0703	"Сдвиг вправо"
-#define POU_INOUT_0703	"(ANY_BIT:IN, ANY_INT:N) => (ANY_BIT:OUT)"
+#define NN_0703         703
+#define LVL_0703        2
+#define NAME_0703       "SHR"
+#define COMMENT_0703    "Shift right"
+#define RU_COMMENT_0703 "Сдвиг вправо"
+#define POU_INOUT_0703  "(ANY_BIT:IN, ANY_INT:N) => (ANY_BIT:OUT)"
 
-#define NN_0704			704
-#define LVL_0704		2
-#define NAME_0704		"ROR"
-#define COMMENT_0704	"Cyclic shift right"
-#define RU_COMMENT_0704	"Циклический сдвиг вправо"
-#define POU_INOUT_0704	"(ANY_NBIT:IN, ANY_INT:N) => (ANY_NBIT:OUT)"
+#define NN_0704         704
+#define LVL_0704        2
+#define NAME_0704       "ROR"
+#define COMMENT_0704    "Cyclic shift right"
+#define RU_COMMENT_0704 "Циклический сдвиг вправо"
+#define POU_INOUT_0704  "(ANY_NBIT:IN, ANY_INT:N) => (ANY_NBIT:OUT)"
 
-#define NN_0705			705
-#define LVL_0705		2
-#define NAME_0705		"ROL"
-#define COMMENT_0705	"Cyclic shift left"
-#define RU_COMMENT_0705	"Циклический сдвиг влево"
-#define POU_INOUT_0705	"(ANY_NBIT:IN, ANY_INT:N) => (ANY_NBIT:OUT"
+#define NN_0705         705
+#define LVL_0705        2
+#define NAME_0705       "ROL"
+#define COMMENT_0705    "Cyclic shift left"
+#define RU_COMMENT_0705 "Циклический сдвиг влево"
+#define POU_INOUT_0705  "(ANY_NBIT:IN, ANY_INT:N) => (ANY_NBIT:OUT)"
 
 // --- 8 Bit operations ---
 
-#define NN_0801			801
-#define LVL_0801		1
-#define NAME_0801		"Bit operations"
-#define RU_NAME_0801	"Битовые операции"
+#define NN_0801         801
+#define LVL_0801        1
+#define NAME_0801       "Bit operations"
+#define RU_NAME_0801    "Битовые операции"
 
-#define NN_0802			802
-#define LVL_0802		2
-#define NAME_0802		"AND"
-#define COMMENT_0802	"Bit AND"
-#define RU_COMMENT_0802	"Битовое И"
-#define POU_INOUT_0802	"(ANY_BIT:IN1, ANY_BIT:IN2) => (ANY_BIT:OUT)"
+#define NN_0802         802
+#define LVL_0802        2
+#define NAME_0802       "AND"
+#define COMMENT_0802    "Bit AND"
+#define RU_COMMENT_0802 "Битовое И"
+#define POU_INOUT_0802  "(ANY_BIT:IN1, ANY_BIT:IN2) => (ANY_BIT:OUT)"
 
-#define NN_0803			803
-#define LVL_0803		2
-#define NAME_0803		"OR"
-#define COMMENT_0803	"Bit OR"
-#define RU_COMMENT_0803	"Битовое ИЛИ"
-#define POU_INOUT_0803	"(ANY_BIT:IN1, ANY_BIT:IN2) => (ANY_BIT:OUT)"
+#define NN_0803         803
+#define LVL_0803        2
+#define NAME_0803       "OR"
+#define COMMENT_0803    "Bit OR"
+#define RU_COMMENT_0803 "Битовое ИЛИ"
+#define POU_INOUT_0803  "(ANY_BIT:IN1, ANY_BIT:IN2) => (ANY_BIT:OUT)"
 
-#define NN_0804			804
-#define LVL_0804		2
-#define NAME_0804		"XOR"
-#define COMMENT_0804	"Exclusive OR"
-#define RU_COMMENT_0804	"Исключающее ИЛИ"
-#define POU_INOUT_0804	"(ANY_BIT:IN1, ANY_BIT:IN2) => (ANY_BIT:OUT)"
+#define NN_0804         804
+#define LVL_0804        2
+#define NAME_0804       "XOR"
+#define COMMENT_0804    "Exclusive OR"
+#define RU_COMMENT_0804 "Исключающее ИЛИ"
+#define POU_INOUT_0804  "(ANY_BIT:IN1, ANY_BIT:IN2) => (ANY_BIT:OUT)"
 
-#define NN_0805			805
-#define LVL_0805		2
-#define NAME_0805		"NOT"
-#define COMMENT_0805	"Bitwise NOT"
-#define RU_COMMENT_0805	"Битовое НЕ"
-#define POU_INOUT_0805	"(ANY_BIT:IN) => (ANY_BIT:OUT)"
+#define NN_0805         805
+#define LVL_0805        2
+#define NAME_0805       "NOT"
+#define COMMENT_0805    "Bitwise NOT"
+#define RU_COMMENT_0805 "Битовое НЕ"
+#define POU_INOUT_0805  "(ANY_BIT:IN) => (ANY_BIT:OUT)"
 
 // --- 9 Choice operations ---
 
-#define NN_0901			901
-#define LVL_0901		1
-#define NAME_0901		"Choice"
-#define RU_NAME_0901	"Выбор"
+#define NN_0901         901
+#define LVL_0901        1
+#define NAME_0901       "Choice"
+#define RU_NAME_0901    "Выбор"
 
-#define NN_0902			902
-#define LVL_0902		2
-#define NAME_0902		"SEL"
-#define COMMENT_0902	"Binary choice (1 or 2)"
-#define RU_COMMENT_0902	"Бинарный выбор (1 или 2)"
-#define POU_INOUT_0902	"(BOOL:G, ANY:IN0, ANY:IN1) => (ANY:OUT)"
+#define NN_0902         902
+#define LVL_0902        2
+#define NAME_0902       "SEL"
+#define COMMENT_0902    "Binary choice (1 or 2)"
+#define RU_COMMENT_0902 "Бинарный выбор (1 или 2)"
+#define POU_INOUT_0902  "(BOOL:G, ANY:IN0, ANY:IN1) => (ANY:OUT)"
 
-#define NN_0903			903
-#define LVL_0903		2
-#define NAME_0903		"MAX"
-#define COMMENT_0903	"Maximum"
-#define RU_COMMENT_0903	"Максимум"
-#define POU_INOUT_0903	"(ANY:IN1, ANY:IN2) => (ANY:OUT)"
+#define NN_0903         903
+#define LVL_0903        2
+#define NAME_0903       "MAX"
+#define COMMENT_0903    "Maximum"
+#define RU_COMMENT_0903 "Максимум"
+#define POU_INOUT_0903  "(ANY:IN1, ANY:IN2) => (ANY:OUT)"
 
-#define NN_0904			904
-#define LVL_0904		2
-#define NAME_0904		"MIN"
-#define COMMENT_0904	"Minimum"
-#define RU_COMMENT_0904	"Минимум"
-#define POU_INOUT_0904	"(ANY:IN1, ANY:IN2) => (ANY:OUT)"
+#define NN_0904         904
+#define LVL_0904        2
+#define NAME_0904       "MIN"
+#define COMMENT_0904    "Minimum"
+#define RU_COMMENT_0904 "Минимум"
+#define POU_INOUT_0904  "(ANY:IN1, ANY:IN2) => (ANY:OUT)"
 
-#define NN_0905			905
-#define LVL_0905			2
-#define NAME_0905		"LIMIT"
-#define COMMENT_0905		"Limitation"
-#define RU_COMMENT_0905	"Ограничение"
-#define POU_INOUT_0905	"(ANY:MN, ANY:IN, ANY:MX) => (ANY:OUT)"
+#define NN_0905         905
+#define LVL_0905        2
+#define NAME_0905       "LIMIT"
+#define COMMENT_0905    "Limitation"
+#define RU_COMMENT_0905 "Ограничение"
+#define POU_INOUT_0905  "(ANY:MN, ANY:IN, ANY:MX) => (ANY:OUT)"
 
-#define NN_0906			906
-#define LVL_0906			2
-#define NAME_0906		"MUX"
-#define COMMENT_0906		"Multiplexer (1 in N)"
-#define RU_COMMENT_0906	"Мультиплексор (1 в N)"
-#define POU_INOUT_0906	"(ANY_INT:K, ANY:IN0, ANY:IN1) => (ANY:OUT)"
+#define NN_0906         906
+#define LVL_0906        2
+#define NAME_0906       "MUX"
+#define COMMENT_0906    "Multiplexer (1 in N)"
+#define RU_COMMENT_0906 "Мультиплексор (1 в N)"
+#define POU_INOUT_0906  "(ANY_INT:K, ANY:IN0, ANY:IN1) => (ANY:OUT)"
 
 // --- 10 Comparison operations ---
 

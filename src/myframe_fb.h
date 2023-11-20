@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////////////////////////
+// C++ code generated with wxFormBuilder (version 3.10.1-0-g8feb16b3)
+// http://www.wxformbuilder.org/
+//
+// PLEASE DO *NOT* EDIT THIS FILE!
+///////////////////////////////////////////////////////////////////////////
+
 #pragma once
 
 #include <wx/artprov.h>
@@ -230,6 +237,7 @@ class ObjPropsFB : public wxDialog
 
 		// Virtual event handlers, override them in your derived class
 		virtual void OnPOUTreeSelChanged( wxTreeEvent& event ) { event.Skip(); }
+		virtual void OnChoise( wxCommandEvent& event ) { event.Skip(); }
 		virtual void onOK( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnCANCEL( wxCommandEvent& event ) { event.Skip(); }
 
