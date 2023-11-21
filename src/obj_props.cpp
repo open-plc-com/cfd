@@ -10,8 +10,12 @@
 */
 
 
-#include "obj_props.h"
+//#include "obj_props.h"
+//#include "msg.h"
+#include "gbl.h"
 #include "msg.h"
+#include "myframe_fb.h"
+#include "obj_props.h"
 
 
 // ============================================================================
@@ -21,7 +25,7 @@ ObjProps::ObjProps( wxWindow       *parent,
                     const wxPoint  &pos,
                     const wxSize   &size,
                     long           style )
-         : ObjPropsFB( parent, id, title, pos, size, style ) {}
+         :ObjPropsFB( parent, id, title, pos, size, style ) {}
 // ============================================================================
 
 
@@ -43,32 +47,16 @@ void ObjProps::Fill_POU()
     {
         if( m_pou->at(i).Level == 1 )
         {
-            pou_item_prev = m_tree->AppendItem( pou_item_root, m_pou->at(i).Name );
+            pou_item_prev = m_tree->AppendItem( pou_item_root, m_pou->at(i).Name.c_str() );
         }
         else if( m_pou->at(i).Level == 2 )
         {
             if( pou_item_prev )
             {
-                m_tree->AppendItem( pou_item_prev, m_pou->at(i).Name );
+                m_tree->AppendItem( pou_item_prev, m_pou->at(i).Name.c_str() );
             }
         }
     }
-
-//IN_OUT_Decode( "in_str", *IN_OUT_Decode_Ptr);
-
-//for( i = 0; i < IN_OUT_Decode_Ptr->size(); i++ )
-//{
-//printf( "Ptr=%d\n", IN_OUT_Decode_Ptr->at(i).Nn );
-//}
-
-//int x, y;
-//m_panel8->GetSize( &x, &y );
-//printf( "Height=%d Width=%d\n", x, y );
-//m_bitmap->GetBitmap();
-
-
-
-
 }
 // ============================================================================
 

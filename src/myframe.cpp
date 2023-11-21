@@ -263,7 +263,7 @@ void MyFrame::Make_Obj( int block_id, wxString obj_name,
             lp.Name_IO = IN_OUT_Decode_Ptr[i].Name.c_str();
             lp.Type = IN_OUT_Decode_Ptr[i].Type;
             lp.In_Out = IN_OUT_Decode_Ptr[i].InOut;
-            lp.Pos = wxPoint( -size_w, (y+(size_h/2)) ); // link point pos
+            lp.Pos = wxPoint( -(int)size_w, (y+(size_h/2)) ); // link point pos
             lp.Name_IO_Pos = wxPoint( size_w, y );       // rectangle pos of Name
 
             y += ( size_h + (size_h/2) );

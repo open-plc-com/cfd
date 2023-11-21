@@ -1,17 +1,24 @@
 /*
-	Name:			shape.cpp
-	Purpose:		Open-PLC Tools
-	Author:			www.open-plc.com
-	Created:		2023/10
-	Modified by:
-	RCS-ID:
-	Copyright:		(c) Open-PLC
-	Licence:		The MIT License (MIT)
+    Name:        shape.cpp
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/10
+    Modified by:
+    RCS-ID:
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
 */
 
 
 #include "shape.h"
 #include "myframe_fb.h"
+#include "myframe.h"
+//#include "myframe_fb.h"
+//#include "gbl.h"
+//#include "dialogs.h"
+#include "obj_props.h"
+
+
 
 
 // ============================================================================
@@ -20,37 +27,113 @@ Shape::Shape( wxWindow      *parent,
               const wxPoint &pos,
               const wxSize  &size,
               long          style)
-      : wxScrolledWindow( parent, id, pos, size, style ) {}
+      :wxScrolledWindow( parent, id, pos, size, style ) {}
+//{printf( "Shape::Shape - constructor\n" );}
+//Shape::~Shape() {}
 // ============================================================================
 
 
 // ============================================================================
-void Shape::OnLeftMouseDown(wxMouseEvent &event)
+void Shape::OnLeftMouseDown( wxMouseEvent &event )
 // ============================================================================
 {
-//printf( "Shape::OnLeftMouseDown\n" );
+Shape_Struct obj;
+wxPoint pos = ScreenToClient( wxGetMousePosition() );
 
-//	switch( m_tool )
-//	{
-//		case NONE_TOOL:
-//printf( "m_tool(NONE_TOOL)=%d\n", m_tool );
-//			break;
-//		case ADD_TOOL:
-//			{
-//printf( "m_tool(ADD_TOOL)=%d\n", m_tool );
-//			}
-//			break;
-//		case FBD_TOOL:
-//			{
+//printf( "Shape::OnLeftMouseDown\n" );
+printf( "Shape::OnLeftMouseDown x=%d y=%d\n", pos.x, pos.y );
+
+	switch( m_tool )
+	{
+		case NONE_TOOL:
+printf( "m_tool(NONE_TOOL)=%d\n", m_tool );
+			break;
+		case ADD_TOOL:
+			{
+printf( "m_tool(ADD_TOOL)=%d\n", m_tool );
+			}
+			break;
+		case FBD_TOOL:
+			{
 //printf( "m_tool(FBD_TOOL)=%d\n", m_tool );
-//			}
-//			break;
-//		case LD_TOOL:
-//			{
-//printf( "m_tool(LD_TOOL)=%d\n", m_tool );
-//			}
-//			break;
-//	}
+				if( m_fbd_tool->GetToolToggled( ID_FBD_CURSOR ) )
+				{
+printf( "ID_FBD_CURSOR\n" );
+				}
+				else
+				if( m_fbd_tool->GetToolToggled( ID_FBD_MOVE ) )
+				{
+printf( "ID_FBD_MOVE\n" );
+				}
+				else
+				if( m_fbd_tool->GetToolToggled( ID_FBD_CMT ) )
+				{
+printf( "ID_FBD_CMT\n" );
+				}
+				else
+				if( m_fbd_tool->GetToolToggled( ID_FBD_VAR ) )
+				{
+printf( "ID_FBD_VAR\n" );
+				}
+				else
+				if( m_fbd_tool->GetToolToggled( ID_FBD_MOVE ) )
+				{
+printf( "ID_FBD_MOVE\n" );
+				}
+				else
+				if( m_fbd_tool->GetToolToggled( ID_FBD_FB ) )
+				{
+printf( "ID_FBD_FB\n" );
+
+	ObjProps *dlg = new ObjProps( this );
+	dlg->SetTitle( wxT( "Block properties" ) );
+
+//dlg->m_static_text1->Show( false );
+//dlg->m_choice->Show( false );
+//dlg->m_staticline6->Show( false );
+dlg->m_name->Disable();
+//dlg->m_choice->Disable();
+
+dlg->m_pou = m_POU;
+
+dlg->IN_OUT_Decode_Ptr = IN_OUT_Decode_Ptr;
+dlg->Shape_Ptr = Shape_Ptr;
+dlg->Link_Point_Ptr = Link_Point_Ptr;
+//dlg->Block_ID = Block_ID;
+//dlg->Block_Name = Block_Name;
+dlg->IN_OUT_Decode = MyFrame::IN_OUT_Decode;
+dlg->Make_Obj = MyFrame::Make_Obj;
+
+dlg->Fill_POU();
+
+//int i;
+//for( i = 0; i < m_POU->size(); i++ )
+//{
+//printf( "m_pou->at(%d).Name=%s\n", i, m_POU->at(i).Name.c_str() );
+//}
+
+
+dlg->ShowModal();
+
+	delete dlg;
+
+				}
+				else
+				if( m_fbd_tool->GetToolToggled( ID_FBD_CONNECT ) )
+				{
+printf( "ID_FBD_CONNECT\n" );
+				}
+
+
+
+			}
+			break;
+		case LD_TOOL:
+			{
+printf( "m_tool(LD_TOOL)=%d\n", m_tool );
+			}
+			break;
+	}
 
 
 
@@ -65,8 +148,8 @@ void Shape::OnLeftMouseDown(wxMouseEvent &event)
 void Shape::OnRightMouseDown(wxMouseEvent &event)
 // ============================================================================
 {
-//printf( "Shape::OnRightMouseDown\n" );
-event.Skip();
+printf( "Shape::OnRightMouseDown\n" );
+	event.Skip();
 }
 // ============================================================================
 
@@ -75,10 +158,10 @@ event.Skip();
 void Shape::OnLeftMouseUp( wxMouseEvent &event )
 // ============================================================================
 {
-Shape_Struct obj;
-wxPoint pos = ScreenToClient( wxGetMousePosition() );
+//Shape_Struct obj;
+//wxPoint pos = ScreenToClient( wxGetMousePosition() );
 
-printf( "Shape::OnLeftMouseUp x=%d y=%d\n", pos.x, pos.y );
+//printf( "Shape::OnLeftMouseUp x=%d y=%d\n", pos.x, pos.y );
 
 //    if( GetCapture() == this )
 //    {
@@ -102,7 +185,7 @@ void Shape::OnLeftMouseDClick( wxMouseEvent &event )
 // ============================================================================
 {
 printf( "Shape::OnLeftMouseDClick\n" );
-event.Skip();
+	event.Skip();
 }
 // ============================================================================
 
@@ -163,6 +246,7 @@ printf( "Shape::OnMiddleDown x=%d y=%d\n", pos.x, pos.y );
 //printf( "GetToolToggled(ID_FBD_MOVE)=%d\n", m_fbd_tool->GetToolToggled( ID_FBD_MOVE ) );
 // ToDO ...
 //	Refresh();
+
 	event.Skip();
 }
 // ============================================================================
@@ -255,6 +339,7 @@ void Shape::OnShapeEnter( wxMouseEvent &event )
 // ============================================================================
 {
 //printf("Shape::OnShapeEnter\n");
+
 	event.Skip();
 }
 // ============================================================================
@@ -265,6 +350,7 @@ void Shape::OnShapeLeave( wxMouseEvent &event )
 // ============================================================================
 {
 //printf("Shape::OnShapeLeave\n");
+
 	event.Skip();
 }
 // ============================================================================
@@ -308,11 +394,11 @@ void Shape::OnChar( wxKeyEvent &event )
 	}
 
 //printf( "Shape::OnChar ALT=%d CTRL=%d SHIFT=%d\n", ALT_KEY, CTRL_KEY, SHIFT_KEY );
-//if( ALT_KEY && ( key == 0x0157 ) )
-//{
-//printf( "Close\n" );
-//Close();
-//}
+
+	if( ALT_KEY && ( key == 0x0157 ) ) // Alt + F4
+	{
+		Close();
+	}
 
 	event.Skip();
 }
@@ -340,7 +426,9 @@ void Shape::OnKeyUp( wxKeyEvent &event )
 	{
 		CTRL_KEY = false;
 	}
+
 printf( "Shape::OnKeyUp ALT=%d CTRL=%d SHIFT=%d\n", ALT_KEY, CTRL_KEY, SHIFT_KEY );
+
 	event.Skip();
 }
 // ============================================================================

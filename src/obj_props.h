@@ -14,8 +14,10 @@
 #define __OBJ_PROPS__
 
 #include <wx/wx.h>
-#include "myframe_fb.h"
-#include "gbl.h"
+//#include "gbl.h"
+//#include "msg.h"
+//#include "myframe_fb.h"
+//#include "obj_props.h"
 
 
 // ============================================================================

@@ -1,12 +1,12 @@
 /*
-    Name:           pou_tree.cpp
-    Purpose:        Open-PLC Tools
-    Author:         www.open-plc.com
-    Created:        2023/10
+    Name:        pou_tree.cpp
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/10
     Modified by:
     RCS-ID:
-    Copyright:      (c) Open-PLC
-    Licence:        The MIT License (MIT)
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
 */
 
 

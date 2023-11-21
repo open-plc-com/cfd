@@ -1,12 +1,12 @@
 /*
-	Name:			msg.h
-	Purpose:		Open-PLC Tools
-	Author:			www.open-plc.com
-	Created:		20YY/MM
-	Modified by:
-	RCS-ID:
-	Copyright:		(c) Open-PLC
-	Licence:		The MIT License (MIT)
+    Name:        msg.h
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/11
+    Modified by:
+    RCS-ID:
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
 */
 
 

@@ -83,9 +83,36 @@ class Shape : public wxScrolledWindow
         //Shape( wxWindow *parent, wxWindowID, const wxPoint &pos, const wxSize &size );
         //~Shape();
 
+//wxTreeItemId pou_item_root, pou_item_prev;
+std::vector <POU_Struct> *m_POU;
+
+
 		std::vector<Shape_Struct> *shape_obj;
 		int block_id;
 		wxString block_name;
+
+
+        //std::vector <Shape_Struct> shape_obj;
+        std::vector <Shape_Struct> make_shape_obj;                  // work vector; make new object
+        std::vector <Shape_Struct> *Shape_Ptr = &make_shape_obj;    // for pointer function (callback)
+
+        std::vector <Link_Point_Struct> link_point;
+        std::vector <Link_Point_Struct> make_link_point;                    // work vector; make new link points
+        std::vector <Link_Point_Struct> *Link_Point_Ptr = &make_link_point; // for pointer function (callback)
+
+        std::vector <IN_OUT_Decode_Struct> IN_OUT_Decode_Vect;
+        std::vector <IN_OUT_Decode_Struct> *IN_OUT_Decode_Ptr = &IN_OUT_Decode_Vect; // for pointer function (callback)
+
+//        // Functions as pointer
+//        static void IN_OUT_Decode( std::string, // POU_InOut
+//                                   std::vector <IN_OUT_Decode_Struct>& );
+//
+//        static void Make_Obj( int,  wxString, // Block_ID, obj_name
+//                               std::vector <IN_OUT_Decode_Struct>&,
+//                               std::vector <Shape_Struct>&,
+//                               std::vector <Link_Point_Struct>& );
+
+
 
 };
 

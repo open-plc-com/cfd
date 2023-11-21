@@ -1,12 +1,12 @@
 /*
-    Name:           myframe_static_events.cpp
-    Purpose:        Open-PLC Tools
-    Author:         www.open-plc.com
-    Created:        2023/10
+    Name:        myframe_static_events.cpp
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/10
     Modified by:
     RCS-ID:
-    Copyright:      (c) Open-PLC
-    Licence:        The MIT License (MIT)
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
 */
 
 
@@ -99,8 +99,8 @@ m_pou_tree->Expand( pou_item_root );
 void MyFrame::OnF6( wxCommandEvent &event )
 // ============================================================================
 {
-int i;
-long l;
+//int i;
+//long l;
 //printf( "MyFrame::OnF6\n" );
 
 	ObjProps *dlg = new ObjProps( this );
@@ -149,6 +149,7 @@ dlg->ShowModal();
 
 
 	delete dlg;
+
 	event.Skip();
 }
 // ============================================================================

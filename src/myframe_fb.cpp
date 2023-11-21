@@ -1,10 +1,3 @@
-///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version 3.10.1-0-g8feb16b3)
-// http://www.wxformbuilder.org/
-//
-// PLEASE DO *NOT* EDIT THIS FILE!
-///////////////////////////////////////////////////////////////////////////
-
 #include "myframe_fb.h"
 
 #include "pict/add.xpm"
@@ -26,18 +19,18 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
-MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+MyFrameFB::MyFrameFB( wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style ) : wxFrame( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	this->SetFont( wxFont( 11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
 
-	wxBoxSizer* bSizer1;
+	wxBoxSizer *bSizer1;
 	bSizer1 = new wxBoxSizer( wxVERTICAL );
 
 	m_panel1 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	m_panel1->SetFont( wxFont( 10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
 
-	wxBoxSizer* bSizer2;
+	wxBoxSizer *bSizer2;
 	bSizer2 = new wxBoxSizer( wxVERTICAL );
 
 	m_nb_shape = new wxAuiNotebook( m_panel1, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0 );
@@ -48,7 +41,7 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_panel2->SetFont( wxFont( 10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
 	m_panel2->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOW ) );
 
-	wxBoxSizer* bSizer3;
+	wxBoxSizer *bSizer3;
 	bSizer3 = new wxBoxSizer( wxVERTICAL );
 
 	m_shape_name = new wxStaticText( m_panel2, wxID_ANY, wxT("Shape"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -78,7 +71,7 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_panel3 = new wxPanel( m_nb_edit, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	m_panel3->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_WINDOW ) );
 
-	wxBoxSizer* bSizer4;
+	wxBoxSizer *bSizer4;
 	bSizer4 = new wxBoxSizer( wxVERTICAL );
 
 	m_edit_name = new wxStaticText( m_panel3, wxID_ANY, wxT("ST"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -102,10 +95,8 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_edit->SetMarginWidth( 1, 0 );
 	m_edit->SetMarginType( 0, wxSTC_MARGIN_NUMBER );
 	m_edit->SetMarginWidth( 0, m_edit->TextWidth( wxSTC_STYLE_LINENUMBER, wxT("_99999") ) );
-	{
-		wxFont font = wxFont( 12, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString );
-		m_edit->StyleSetFont( wxSTC_STYLE_DEFAULT, font );
-	}
+	wxFont font = wxFont( 12, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString );
+	m_edit->StyleSetFont( wxSTC_STYLE_DEFAULT, font );
 	m_edit->MarkerDefine( wxSTC_MARKNUM_FOLDER, wxSTC_MARK_BOXPLUS );
 	m_edit->MarkerSetBackground( wxSTC_MARKNUM_FOLDER, wxColour( wxT("BLACK") ) );
 	m_edit->MarkerSetForeground( wxSTC_MARKNUM_FOLDER, wxColour( wxT("WHITE") ) );
@@ -140,7 +131,7 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_nb_grid->Hide();
 
 	m_panel4 = new wxPanel( m_nb_grid, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	wxBoxSizer* bSizer6;
+	wxBoxSizer *bSizer6;
 	bSizer6 = new wxBoxSizer( wxVERTICAL );
 
 	m_grid_tool = new wxToolBar( m_panel4, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_FLAT|wxTB_HORIZONTAL );
@@ -204,7 +195,7 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_panel5 = new wxPanel( m_nb_prj, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	m_panel5->SetBackgroundColour( wxColour( 255, 255, 255 ) );
 
-	wxBoxSizer* bSizer7;
+	wxBoxSizer *bSizer7;
 	bSizer7 = new wxBoxSizer( wxVERTICAL );
 
 	m_prj_tool = new wxToolBar( m_panel5, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_FLAT|wxTB_HORIZONTAL );
@@ -230,7 +221,7 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 	// Grid
 	m_prj_tree->CreateGrid( 1, 9 );
 	m_prj_tree->EnableEditing( false );
-	m_prj_tree->EnableGridLines( true );
+	m_prj_tree->EnableGridLines( false );
 	m_prj_tree->EnableDragGridSize( false );
 	m_prj_tree->SetMargins( 0, 0 );
 
@@ -317,6 +308,7 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 
 	m_ld_tool = new wxAuiToolBar( m_panel1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxAUI_TB_GRIPPER|wxAUI_TB_HORZ_LAYOUT );
 	m_ld_tool->SetFont( wxFont( 10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
+	m_ld_tool->Hide();
 
 	m_ld_tool_cursor = m_ld_tool->AddTool( ID_LD_CURSOR, wxT("tool"), wxBitmap( cursor_xpm ), wxNullBitmap, wxITEM_RADIO, wxEmptyString, wxEmptyString, NULL );
 
@@ -353,58 +345,63 @@ MyFrameFB::MyFrameFB( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_menubar->SetFont( wxFont( 10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
 
 	m_menu_file = new wxMenu();
-	wxMenuItem* m_menu_open;
+	wxMenuItem *m_menu_new;
+	m_menu_new = new wxMenuItem( m_menu_file, ID_PRJ_NEW, wxString( wxT("New Project\tCtrl-N") ) , wxEmptyString, wxITEM_NORMAL );
+	m_menu_file->Append( m_menu_new );
+	m_menu_new->Enable( false );
+
+	wxMenuItem *m_menu_open;
 	m_menu_open = new wxMenuItem( m_menu_file, ID_PRJ_OPEN, wxString( wxT("Open Project\tCtrl+O") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_file->Append( m_menu_open );
 	m_menu_open->Enable( false );
 
-	wxMenuItem* m_menu_save;
+	wxMenuItem *m_menu_save;
 	m_menu_save = new wxMenuItem( m_menu_file, ID_PRJ_SAVE, wxString( wxT("Save Project\tCtrl+S") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_file->Append( m_menu_save );
 	m_menu_save->Enable( false );
 
-	wxMenuItem* m_menu_prj_add;
-	m_menu_prj_add = new wxMenuItem( m_menu_file, ID_PRJ_ADD, wxString( wxT("&Add Project/Block/Program\tCtrl+A") ) , wxEmptyString, wxITEM_NORMAL );
+	wxMenuItem *m_menu_prj_add;
+	m_menu_prj_add = new wxMenuItem( m_menu_file, ID_PRJ_ADD, wxString( wxT("&Add to Project/Block/Program\tCtrl+A") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_file->Append( m_menu_prj_add );
 
-	wxMenuItem* m_menu_prj_close;
-	m_menu_prj_close = new wxMenuItem( m_menu_file, wxID_ANY, wxString( wxT("Close Project") ) , wxEmptyString, wxITEM_NORMAL );
+	wxMenuItem *m_menu_prj_close;
+	m_menu_prj_close = new wxMenuItem( m_menu_file, ID_PRJ_CLOSE, wxString( wxT("Close Project") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_file->Append( m_menu_prj_close );
 	m_menu_prj_close->Enable( false );
 
 	m_menu_file->AppendSeparator();
 
-	wxMenuItem* m_menu_exit;
+	wxMenuItem *m_menu_exit;
 	m_menu_exit = new wxMenuItem( m_menu_file, ID_EXIT, wxString( wxT("E&xit\tAlt+F4") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_file->Append( m_menu_exit );
 
 	m_menubar->Append( m_menu_file, wxT("&File") );
 
 	m_menu_view = new wxMenu();
-	wxMenuItem* m_view_F3;
+	wxMenuItem *m_view_F3;
 	m_view_F3 = new wxMenuItem( m_menu_view, ID_SHOW_F3, wxString( wxT("View project tree(On/Off)\tF3") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_view->Append( m_view_F3 );
 
-	wxMenuItem* m_view_F4;
+	wxMenuItem *m_view_F4;
 	m_view_F4 = new wxMenuItem( m_menu_view, ID_SHOW_F4, wxString( wxT("View variables (On/Off)\tF4") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_view->Append( m_view_F4 );
 
-	wxMenuItem* m_view_F5;
+	wxMenuItem *m_view_F5;
 	m_view_F5 = new wxMenuItem( m_menu_view, ID_SHOW_F5, wxString( wxT("View POU (On/Off)\tF5") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_view->Append( m_view_F5 );
 
-	wxMenuItem* m_view_F6;
+	wxMenuItem *m_view_F6;
 	m_view_F6 = new wxMenuItem( m_menu_view, ID_SHOW_F6, wxString( wxT("Test\tF6") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_view->Append( m_view_F6 );
 
 	m_menubar->Append( m_menu_view, wxT("&View") );
 
 	m_menu_tool = new wxMenu();
-	wxMenuItem* m_1;
+	wxMenuItem *m_1;
 	m_1 = new wxMenuItem( m_menu_tool, wxID_ANY, wxString( wxT("MyMenuItem_1") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_tool->Append( m_1 );
 
-	wxMenuItem* m_2;
+	wxMenuItem *m_2;
 	m_2 = new wxMenuItem( m_menu_tool, wxID_ANY, wxString( wxT("MyMenuItem_2") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menu_tool->Append( m_2 );
 
@@ -441,12 +438,12 @@ MyFrameFB::~MyFrameFB()
 
 }
 
-ConfigVarFB::ConfigVarFB( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+ConfigPrjFB::ConfigPrjFB( wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	this->SetFont( wxFont( 11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
 
-	wxBoxSizer* bSizer5;
+	wxBoxSizer *bSizer5;
 	bSizer5 = new wxBoxSizer( wxVERTICAL );
 
 	m_text = new wxStaticText( this, wxID_ANY, wxT("MyLabel"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -489,19 +486,19 @@ ConfigVarFB::ConfigVarFB( wxWindow* parent, wxWindowID id, const wxString& title
 	this->Centre( wxBOTH );
 }
 
-ConfigVarFB::~ConfigVarFB()
+ConfigPrjFB::~ConfigPrjFB()
 {
 }
 
-PrjAddFB::PrjAddFB( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+PrjAddFB::PrjAddFB( wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	this->SetFont( wxFont( 11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
 
-	wxBoxSizer* bSizer8;
+	wxBoxSizer *bSizer8;
 	bSizer8 = new wxBoxSizer( wxVERTICAL );
 
-	wxFlexGridSizer* fgSizer;
+	wxFlexGridSizer *fgSizer;
 	fgSizer = new wxFlexGridSizer( 2, 2, 0, 0 );
 	fgSizer->SetFlexibleDirection( wxBOTH );
 	fgSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
@@ -526,7 +523,7 @@ PrjAddFB::PrjAddFB( wxWindow* parent, wxWindowID id, const wxString& title, cons
 
 	bSizer8->Add( fgSizer, 1, wxEXPAND, 5 );
 
-	wxBoxSizer* bSizer10;
+	wxBoxSizer *bSizer10;
 	bSizer10 = new wxBoxSizer( wxHORIZONTAL );
 
 	m_file_name = new wxStaticText( this, wxID_ANY, wxT("File Name :"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -542,7 +539,7 @@ PrjAddFB::PrjAddFB( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	m_staticline6 = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
 	bSizer8->Add( m_staticline6, 0, wxTOP|wxEXPAND, 5 );
 
-	wxBoxSizer* bSizer9;
+	wxBoxSizer *bSizer9;
 	bSizer9 = new wxBoxSizer( wxHORIZONTAL );
 
 	m_button_ok = new wxButton( this, ID_B1, wxT("Ok"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -574,22 +571,22 @@ PrjAddFB::~PrjAddFB()
 
 }
 
-ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+ObjPropsFB::ObjPropsFB( wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	this->SetFont( wxFont( 10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
 
-	wxBoxSizer* bSizer11;
+	wxBoxSizer *bSizer11;
 	bSizer11 = new wxBoxSizer( wxVERTICAL );
 
-	wxGridSizer* gSizer1;
+	wxGridSizer *gSizer1;
 	gSizer1 = new wxGridSizer( 0, 2, 0, 0 );
 
 	m_splitter = new wxSplitterWindow( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxSP_LIVE_UPDATE|wxSP_NOBORDER );
 	m_splitter->Connect( wxEVT_IDLE, wxIdleEventHandler( ObjPropsFB::m_splitterOnIdle ), NULL, this );
 
 	m_panel6 = new wxPanel( m_splitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	wxStaticBoxSizer* sbSizer1;
+	wxStaticBoxSizer *sbSizer1;
 	sbSizer1 = new wxStaticBoxSizer( new wxStaticBox( m_panel6, wxID_ANY, wxT("Library") ), wxVERTICAL );
 
 	m_tree = new wxTreeCtrl( sbSizer1->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTR_DEFAULT_STYLE|wxTR_HIDE_ROOT );
@@ -600,7 +597,7 @@ ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, 
 	m_panel6->Layout();
 	sbSizer1->Fit( m_panel6 );
 	m_panel7 = new wxPanel( m_splitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
-	wxBoxSizer* bSizer151;
+	wxBoxSizer *bSizer151;
 	bSizer151 = new wxBoxSizer( wxVERTICAL );
 
 	m_text = new wxTextCtrl( m_panel7, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE|wxTE_NO_VSCROLL|wxTE_READONLY );
@@ -613,10 +610,10 @@ ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, 
 	m_splitter->SplitHorizontally( m_panel6, m_panel7, 240 );
 	gSizer1->Add( m_splitter, 1, wxEXPAND, 5 );
 
-	wxBoxSizer* bSizer16;
+	wxBoxSizer *bSizer16;
 	bSizer16 = new wxBoxSizer( wxVERTICAL );
 
-	wxBoxSizer* bSizer17;
+	wxBoxSizer *bSizer17;
 	bSizer17 = new wxBoxSizer( wxHORIZONTAL );
 
 	m_static_text1 = new wxStaticText( this, wxID_ANY, wxT("Name:"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -629,7 +626,7 @@ ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, 
 
 	bSizer16->Add( bSizer17, 0, wxEXPAND|wxTOP, 5 );
 
-	wxBoxSizer* bSizer14;
+	wxBoxSizer *bSizer14;
 	bSizer14 = new wxBoxSizer( wxHORIZONTAL );
 
 	m_static_text2 = new wxStaticText( this, wxID_ANY, wxT("Inputs:"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -653,7 +650,7 @@ ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, 
 	bSizer16->Add( m_static_text3, 0, wxRIGHT|wxLEFT, 5 );
 
 	m_panel8 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE|wxTAB_TRAVERSAL );
-	wxBoxSizer* bSizer161;
+	wxBoxSizer *bSizer161;
 	bSizer161 = new wxBoxSizer( wxVERTICAL );
 
 	m_bitmap = new wxStaticBitmap( m_panel8, wxID_ANY, wxNullBitmap, wxDefaultPosition, wxDefaultSize, 0 );
@@ -671,7 +668,7 @@ ObjPropsFB::ObjPropsFB( wxWindow* parent, wxWindowID id, const wxString& title, 
 
 	bSizer11->Add( gSizer1, 1, wxEXPAND, 5 );
 
-	wxBoxSizer* bSizer15;
+	wxBoxSizer *bSizer15;
 	bSizer15 = new wxBoxSizer( wxHORIZONTAL );
 
 	m_button_ok = new wxButton( this, ID_B1, wxT("Ok"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -704,4 +701,159 @@ ObjPropsFB::~ObjPropsFB()
 	m_button_ok->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ObjPropsFB::onOK ), NULL, this );
 	m_button_cancel->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( ObjPropsFB::OnCANCEL ), NULL, this );
 
+}
+
+ConnectPropsFB::ConnectPropsFB( wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style ) : wxDialog( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+
+	wxBoxSizer *bSizer18;
+	bSizer18 = new wxBoxSizer( wxVERTICAL );
+
+	wxGridSizer *gSizer2;
+	gSizer2 = new wxGridSizer( 1, 2, 0, 0 );
+
+	wxBoxSizer *bSizer19;
+	bSizer19 = new wxBoxSizer( wxVERTICAL );
+
+	wxStaticBoxSizer *sbSizer2;
+	sbSizer2 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, wxT("Type") ), wxVERTICAL );
+
+	m_radio_btn1 = new wxRadioButton( sbSizer2->GetStaticBox(), wxID_ANY, wxT("Connector"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizer2->Add( m_radio_btn1, 0, wxALL, 5 );
+
+	m_radio_btn2 = new wxRadioButton( sbSizer2->GetStaticBox(), wxID_ANY, wxT("Continue"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizer2->Add( m_radio_btn2, 0, wxALL, 5 );
+
+
+	bSizer19->Add( sbSizer2, 1, wxLEFT, 5 );
+
+	wxBoxSizer *bSizer21;
+	bSizer21 = new wxBoxSizer( wxHORIZONTAL );
+
+	m_static_text1 = new wxStaticText( this, wxID_ANY, wxT("Name:"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_static_text1->Wrap( -1 );
+	bSizer21->Add( m_static_text1, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+
+	m_name = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer21->Add( m_name, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+
+
+	bSizer19->Add( bSizer21, 0, wxEXPAND, 5 );
+
+
+	gSizer2->Add( bSizer19, 1, wxEXPAND, 5 );
+
+	wxBoxSizer *bSizer20;
+	bSizer20 = new wxBoxSizer( wxVERTICAL );
+
+	m_staticText11 = new wxStaticText( this, wxID_ANY, wxT("Preview"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText11->Wrap( -1 );
+	bSizer20->Add( m_staticText11, 0, wxALL, 5 );
+
+	m_bitmap = new wxStaticBitmap( this, wxID_ANY, wxNullBitmap, wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE );
+	bSizer20->Add( m_bitmap, 1, wxEXPAND|wxRIGHT|wxLEFT, 5 );
+
+
+	gSizer2->Add( bSizer20, 1, wxEXPAND, 5 );
+
+
+	bSizer18->Add( gSizer2, 1, wxEXPAND, 5 );
+
+	wxBoxSizer *bSizer22;
+	bSizer22 = new wxBoxSizer( wxHORIZONTAL );
+
+	m_button7 = new wxButton( this, wxID_ANY, wxT("MyButton"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer22->Add( m_button7, 0, wxALL, 5 );
+
+	m_button6 = new wxButton( this, wxID_ANY, wxT("MyButton"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer22->Add( m_button6, 0, wxALL, 5 );
+
+
+	bSizer18->Add( bSizer22, 0, wxALIGN_RIGHT, 5 );
+
+
+	this->SetSizer( bSizer18 );
+	this->Layout();
+	bSizer18->Fit( this );
+
+	this->Centre( wxBOTH );
+}
+
+ConnectPropsFB::~ConnectPropsFB()
+{
+}
+
+VarPropsFB::VarPropsFB( wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style ) : wxDialog( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+
+	wxBoxSizer *bSizer23;
+	bSizer23 = new wxBoxSizer( wxVERTICAL );
+
+	wxGridSizer *gSizer3;
+	gSizer3 = new wxGridSizer( 0, 2, 0, 0 );
+
+	wxBoxSizer *bSizer24;
+	bSizer24 = new wxBoxSizer( wxVERTICAL );
+
+	m_staticText12 = new wxStaticText( this, wxID_ANY, wxT("MyLabel"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText12->Wrap( -1 );
+	bSizer24->Add( m_staticText12, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
+
+	wxArrayString m_choice3Choices;
+	m_choice3 = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_choice3Choices, 0 );
+	m_choice3->SetSelection( 0 );
+	bSizer24->Add( m_choice3, 0, wxALL|wxEXPAND, 5 );
+
+
+	gSizer3->Add( bSizer24, 1, wxEXPAND, 5 );
+
+	wxBoxSizer *bSizer25;
+	bSizer25 = new wxBoxSizer( wxVERTICAL );
+
+	m_textCtrl6 = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
+	bSizer25->Add( m_textCtrl6, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
+
+	m_listBox1 = new wxListBox( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, 0 );
+	bSizer25->Add( m_listBox1, 1, wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
+
+
+	gSizer3->Add( bSizer25, 1, wxEXPAND, 5 );
+
+
+	bSizer23->Add( gSizer3, 1, wxEXPAND, 5 );
+
+	m_staticline7 = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
+	bSizer23->Add( m_staticline7, 0, wxEXPAND|wxTOP, 5 );
+
+	m_staticText13 = new wxStaticText( this, wxID_ANY, wxT("MyLabel"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13->Wrap( -1 );
+	bSizer23->Add( m_staticText13, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
+
+	m_bitmap3 = new wxStaticBitmap( this, wxID_ANY, wxNullBitmap, wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE );
+	bSizer23->Add( m_bitmap3, 1, wxALL|wxEXPAND, 5 );
+
+	wxBoxSizer *bSizer26;
+	bSizer26 = new wxBoxSizer( wxHORIZONTAL );
+
+	m_button8 = new wxButton( this, wxID_ANY, wxT("MyButton"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer26->Add( m_button8, 0, wxALL, 5 );
+
+	m_button9 = new wxButton( this, wxID_ANY, wxT("MyButton"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer26->Add( m_button9, 0, wxALL, 5 );
+
+
+	bSizer23->Add( bSizer26, 0, wxALIGN_RIGHT, 5 );
+
+
+	this->SetSizer( bSizer23 );
+	this->Layout();
+	bSizer23->Fit( this );
+
+	this->Centre( wxBOTH );
+}
+
+VarPropsFB::~VarPropsFB()
+{
 }
