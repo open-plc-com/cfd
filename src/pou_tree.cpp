@@ -184,252 +184,252 @@ void MyFrame::Init_POU_Tree()
 
     // ---  2 Additional function blocks --------------------------------------
 
-    //POU_Tree.Nn        = NN_0201;
-    //POU_Tree.Level     = LVL_0201;
-    //POU_Tree.Name      = NAME_0201;
-    //POU_Tree.Comment   = "";
-    //POU_Tree.POU_InOut = "";
+    POU_Tree.Nn        = NN_0201;
+    POU_Tree.Level     = LVL_0201;
+    POU_Tree.Name      = NAME_0201;
+    POU_Tree.Comment   = "";
+    POU_Tree.POU_InOut = "";
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0202;
-    //POU_Tree.Level     = LVL_0202;
-    //POU_Tree.Name      = NAME_0202;
-    //POU_Tree.Comment   = COMMENT_0202;
-    //POU_Tree.POU_InOut = POU_INOUT_0202;
+    POU_Tree.Nn        = NN_0202;
+    POU_Tree.Level     = LVL_0202;
+    POU_Tree.Name      = NAME_0202;
+    POU_Tree.Comment   = COMMENT_0202;
+    POU_Tree.POU_InOut = POU_INOUT_0202;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0203;
-    //POU_Tree.Level     = LVL_0203;
-    //POU_Tree.Name      = NAME_0203;
-    //POU_Tree.Comment   = COMMENT_0203;
-    //POU_Tree.POU_InOut = POU_INOUT_0203;
+    POU_Tree.Nn        = NN_0203;
+    POU_Tree.Level     = LVL_0203;
+    POU_Tree.Name      = NAME_0203;
+    POU_Tree.Comment   = COMMENT_0203;
+    POU_Tree.POU_InOut = POU_INOUT_0203;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0204;
-    //POU_Tree.Level     = LVL_0204;
-    //POU_Tree.Name      = NAME_0204;
-    //POU_Tree.Comment   = COMMENT_0204;
-    //POU_Tree.POU_InOut = POU_INOUT_0204;
+    POU_Tree.Nn        = NN_0204;
+    POU_Tree.Level     = LVL_0204;
+    POU_Tree.Name      = NAME_0204;
+    POU_Tree.Comment   = COMMENT_0204;
+    POU_Tree.POU_InOut = POU_INOUT_0204;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0205;
-    //POU_Tree.Level     = LVL_0205;
-    //POU_Tree.Name      = NAME_0205;
-    //POU_Tree.Comment   = COMMENT_0205;
-    //POU_Tree.POU_InOut = POU_INOUT_0205;
+    POU_Tree.Nn        = NN_0205;
+    POU_Tree.Level     = LVL_0205;
+    POU_Tree.Name      = NAME_0205;
+    POU_Tree.Comment   = COMMENT_0205;
+    POU_Tree.POU_InOut = POU_INOUT_0205;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0206;
-    //POU_Tree.Level     = LVL_0206;
-    //POU_Tree.Name      = NAME_0206;
-    //POU_Tree.Comment   = COMMENT_0206;
-    //POU_Tree.POU_InOut = POU_INOUT_0206;
+    POU_Tree.Nn        = NN_0206;
+    POU_Tree.Level     = LVL_0206;
+    POU_Tree.Name      = NAME_0206;
+    POU_Tree.Comment   = COMMENT_0206;
+    POU_Tree.POU_InOut = POU_INOUT_0206;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0207;
-    //POU_Tree.Level     = LVL_0207;
-    //POU_Tree.Name      = NAME_0207;
-    //POU_Tree.Comment   = COMMENT_0207;
-    //POU_Tree.POU_InOut = POU_INOUT_0207;
+    POU_Tree.Nn        = NN_0207;
+    POU_Tree.Level     = LVL_0207;
+    POU_Tree.Name      = NAME_0207;
+    POU_Tree.Comment   = COMMENT_0207;
+    POU_Tree.POU_InOut = POU_INOUT_0207;
     //m_POU.push_back( POU_Tree );
 
     // ---  3 Types Conversion ---
 
-    //POU_Tree.Nn        = NN_0301;
-    //POU_Tree.Level     = LVL_0301;
-    //POU_Tree.Name      = NAME_0301;
-    //POU_Tree.Comment   = "";
-    //POU_Tree.POU_InOut = "";
+    POU_Tree.Nn        = NN_0301;
+    POU_Tree.Level     = LVL_0301;
+    POU_Tree.Name      = NAME_0301;
+    POU_Tree.Comment   = "";
+    POU_Tree.POU_InOut = "";
     //m_POU.push_back( POU_Tree );
 
     // ---  4 Mathematical functions ---
 
-    //POU_Tree.Nn        = NN_0401;
-    //POU_Tree.Level     = LVL_0401;
-    //POU_Tree.Name      = NAME_0401;
-    //POU_Tree.Comment   = "";
-    //POU_Tree.POU_InOut = "";
+    POU_Tree.Nn        = NN_0401;
+    POU_Tree.Level     = LVL_0401;
+    POU_Tree.Name      = NAME_0401;
+    POU_Tree.Comment   = "";
+    POU_Tree.POU_InOut = "";
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0402;
-    //POU_Tree.Level     = LVL_0402;
-    //POU_Tree.Name      = NAME_0402;
-    //POU_Tree.Comment   = COMMENT_0402;
-    //POU_Tree.POU_InOut = POU_INOUT_0402;
+    POU_Tree.Nn        = NN_0402;
+    POU_Tree.Level     = LVL_0402;
+    POU_Tree.Name      = NAME_0402;
+    POU_Tree.Comment   = COMMENT_0402;
+    POU_Tree.POU_InOut = POU_INOUT_0402;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0403;
-    //POU_Tree.Level     = LVL_0403;
-    //POU_Tree.Name      = NAME_0403;
-    //POU_Tree.Comment   =  COMMENT_0403;
-    //POU_Tree.POU_InOut = POU_INOUT_0403;
+    POU_Tree.Nn        = NN_0403;
+    POU_Tree.Level     = LVL_0403;
+    POU_Tree.Name      = NAME_0403;
+    POU_Tree.Comment   =  COMMENT_0403;
+    POU_Tree.POU_InOut = POU_INOUT_0403;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0404;
-    //POU_Tree.Level     = LVL_0404;
-    //POU_Tree.Name      = NAME_0404;
-    //POU_Tree.Comment   =  COMMENT_0404;
-    //POU_Tree.POU_InOut = POU_INOUT_0404;
+    POU_Tree.Nn        = NN_0404;
+    POU_Tree.Level     = LVL_0404;
+    POU_Tree.Name      = NAME_0404;
+    POU_Tree.Comment   =  COMMENT_0404;
+    POU_Tree.POU_InOut = POU_INOUT_0404;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0405;
-    //POU_Tree.Level     = LVL_0405;
-    //POU_Tree.Name      = NAME_0405;
-    //POU_Tree.Comment   =  COMMENT_0405;
-    //POU_Tree.POU_InOut = POU_INOUT_0405;
+    POU_Tree.Nn        = NN_0405;
+    POU_Tree.Level     = LVL_0405;
+    POU_Tree.Name      = NAME_0405;
+    POU_Tree.Comment   =  COMMENT_0405;
+    POU_Tree.POU_InOut = POU_INOUT_0405;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0406;
-    //POU_Tree.Level     = LVL_0406;
-    //POU_Tree.Name      = NAME_0406;
-    //POU_Tree.Comment   =  COMMENT_0406;
-    //POU_Tree.POU_InOut = POU_INOUT_0406;
+    POU_Tree.Nn        = NN_0406;
+    POU_Tree.Level     = LVL_0406;
+    POU_Tree.Name      = NAME_0406;
+    POU_Tree.Comment   =  COMMENT_0406;
+    POU_Tree.POU_InOut = POU_INOUT_0406;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0407;
-    //POU_Tree.Level     = LVL_0407;
-    //POU_Tree.Name      = NAME_0407;
-    //POU_Tree.Comment   =  COMMENT_0407;
-    //POU_Tree.POU_InOut = POU_INOUT_0407;
+    POU_Tree.Nn        = NN_0407;
+    POU_Tree.Level     = LVL_0407;
+    POU_Tree.Name      = NAME_0407;
+    POU_Tree.Comment   =  COMMENT_0407;
+    POU_Tree.POU_InOut = POU_INOUT_0407;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0408;
-    //POU_Tree.Level     = LVL_0408;
-    //POU_Tree.Name      = NAME_0408;
-    //POU_Tree.Comment   =  COMMENT_0408;
-    //POU_Tree.POU_InOut = POU_INOUT_0408;
+    POU_Tree.Nn        = NN_0408;
+    POU_Tree.Level     = LVL_0408;
+    POU_Tree.Name      = NAME_0408;
+    POU_Tree.Comment   =  COMMENT_0408;
+    POU_Tree.POU_InOut = POU_INOUT_0408;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0409;
-    //POU_Tree.Level     = LVL_0409;
-    //POU_Tree.Name      = NAME_0409;
-    //POU_Tree.Comment   =  COMMENT_0409;
-    //POU_Tree.POU_InOut = POU_INOUT_0409;
+    POU_Tree.Nn        = NN_0409;
+    POU_Tree.Level     = LVL_0409;
+    POU_Tree.Name      = NAME_0409;
+    POU_Tree.Comment   =  COMMENT_0409;
+    POU_Tree.POU_InOut = POU_INOUT_0409;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0410;
-    //POU_Tree.Level     = LVL_0410;
-    //POU_Tree.Name      = NAME_0410;
-    //POU_Tree.Comment   =  COMMENT_0410;
-    //POU_Tree.POU_InOut = POU_INOUT_0410;
+    POU_Tree.Nn        = NN_0410;
+    POU_Tree.Level     = LVL_0410;
+    POU_Tree.Name      = NAME_0410;
+    POU_Tree.Comment   =  COMMENT_0410;
+    POU_Tree.POU_InOut = POU_INOUT_0410;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0411;
-    //POU_Tree.Level     = LVL_0411;
-    //POU_Tree.Name      = NAME_0411;
-    //POU_Tree.Comment   =  COMMENT_0411;
-    //POU_Tree.POU_InOut = POU_INOUT_0411;
+    POU_Tree.Nn        = NN_0411;
+    POU_Tree.Level     = LVL_0411;
+    POU_Tree.Name      = NAME_0411;
+    POU_Tree.Comment   =  COMMENT_0411;
+    POU_Tree.POU_InOut = POU_INOUT_0411;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0412;
-    //POU_Tree.Level     = LVL_0412;
-    //POU_Tree.Name      = NAME_0412;
-    //POU_Tree.Comment   =  COMMENT_0412;
-    //POU_Tree.POU_InOut = POU_INOUT_0412;
+    POU_Tree.Nn        = NN_0412;
+    POU_Tree.Level     = LVL_0412;
+    POU_Tree.Name      = NAME_0412;
+    POU_Tree.Comment   =  COMMENT_0412;
+    POU_Tree.POU_InOut = POU_INOUT_0412;
     //m_POU.push_back( POU_Tree );
 
     // --- 5 Mathematics ---
 
-    //POU_Tree.Nn        = NN_0501;
-    //POU_Tree.Level     = LVL_0501;
-    //POU_Tree.Name      = NAME_0501;
-    //POU_Tree.Comment   = "";
-    //POU_Tree.POU_InOut = "";
+    POU_Tree.Nn        = NN_0501;
+    POU_Tree.Level     = LVL_0501;
+    POU_Tree.Name      = NAME_0501;
+    POU_Tree.Comment   = "";
+    POU_Tree.POU_InOut = "";
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0502;
-    //POU_Tree.Level     = LVL_0502;
-    //POU_Tree.Name      = NAME_0502;
-    //POU_Tree.Comment   = COMMENT_0502;
-    //POU_Tree.POU_InOut = POU_INOUT_0502;
+    POU_Tree.Nn        = NN_0502;
+    POU_Tree.Level     = LVL_0502;
+    POU_Tree.Name      = NAME_0502;
+    POU_Tree.Comment   = COMMENT_0502;
+    POU_Tree.POU_InOut = POU_INOUT_0502;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0503;
-    //POU_Tree.Level     = LVL_0503;
-    //POU_Tree.Name      = NAME_0503;
-    //POU_Tree.Comment   = COMMENT_0503;
-    //POU_Tree.POU_InOut = POU_INOUT_0503;
+    POU_Tree.Nn        = NN_0503;
+    POU_Tree.Level     = LVL_0503;
+    POU_Tree.Name      = NAME_0503;
+    POU_Tree.Comment   = COMMENT_0503;
+    POU_Tree.POU_InOut = POU_INOUT_0503;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0504;
-    //POU_Tree.Level     = LVL_0504;
-    //POU_Tree.Name      = NAME_0504;
-    //POU_Tree.Comment   = COMMENT_0504;
-    //POU_Tree.POU_InOut = POU_INOUT_0504;
+    POU_Tree.Nn        = NN_0504;
+    POU_Tree.Level     = LVL_0504;
+    POU_Tree.Name      = NAME_0504;
+    POU_Tree.Comment   = COMMENT_0504;
+    POU_Tree.POU_InOut = POU_INOUT_0504;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0505;
-    //POU_Tree.Level     = LVL_0505;
-    //POU_Tree.Name      = NAME_0505;
-    //POU_Tree.Comment   = COMMENT_0505;
-    //POU_Tree.POU_InOut = POU_INOUT_0505;
+    POU_Tree.Nn        = NN_0505;
+    POU_Tree.Level     = LVL_0505;
+    POU_Tree.Name      = NAME_0505;
+    POU_Tree.Comment   = COMMENT_0505;
+    POU_Tree.POU_InOut = POU_INOUT_0505;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0506;
-    //POU_Tree.Level     = LVL_0506;
-    //POU_Tree.Name      = NAME_0506;
-    //POU_Tree.Comment   = COMMENT_0506;
-    //POU_Tree.POU_InOut = POU_INOUT_0506;
+    POU_Tree.Nn        = NN_0506;
+    POU_Tree.Level     = LVL_0506;
+    POU_Tree.Name      = NAME_0506;
+    POU_Tree.Comment   = COMMENT_0506;
+    POU_Tree.POU_InOut = POU_INOUT_0506;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0507;
-    //POU_Tree.Level     = LVL_0507;
-    //POU_Tree.Name      = NAME_0507;
-    //POU_Tree.Comment   = COMMENT_0507;
-    //POU_Tree.POU_InOut = POU_INOUT_0507;
+    POU_Tree.Nn        = NN_0507;
+    POU_Tree.Level     = LVL_0507;
+    POU_Tree.Name      = NAME_0507;
+    POU_Tree.Comment   = COMMENT_0507;
+    POU_Tree.POU_InOut = POU_INOUT_0507;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0508;
-    //POU_Tree.Level     = LVL_0508;
-    //POU_Tree.Name      = NAME_0508;
-    //POU_Tree.Comment   = COMMENT_0508;
-    //POU_Tree.POU_InOut = POU_INOUT_0508;
+    POU_Tree.Nn        = NN_0508;
+    POU_Tree.Level     = LVL_0508;
+    POU_Tree.Name      = NAME_0508;
+    POU_Tree.Comment   = COMMENT_0508;
+    POU_Tree.POU_InOut = POU_INOUT_0508;
     //m_POU.push_back( POU_Tree );
 
 	// --- 6 Time ---
 
-	//POU_Tree.Nn        = NN_0601;
-	//POU_Tree.Level     = LVL_0601;
-	//POU_Tree.Name      = NAME_0601;
-	//POU_Tree.Comment   = "";
-	//POU_Tree.POU_InOut = "";
+	POU_Tree.Nn        = NN_0601;
+	POU_Tree.Level     = LVL_0601;
+	POU_Tree.Name      = NAME_0601;
+	POU_Tree.Comment   = "";
+	POU_Tree.POU_InOut = "";
 	//m_POU.push_back( POU_Tree );
 
     // --- 7 Shear operations ---
 
-    //POU_Tree.Nn        = NN_0701;
-    //POU_Tree.Level     = LVL_0701;
-    //POU_Tree.Name      = NAME_0701;
-    //POU_Tree.Comment   = "";
-    //POU_Tree.POU_InOut = "";
+    POU_Tree.Nn        = NN_0701;
+    POU_Tree.Level     = LVL_0701;
+    POU_Tree.Name      = NAME_0701;
+    POU_Tree.Comment   = "";
+    POU_Tree.POU_InOut = "";
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0702;
-    //POU_Tree.Level     = LVL_0702;
-    //POU_Tree.Name      = NAME_0702;
-    //POU_Tree.Comment   = COMMENT_0702;
-    //POU_Tree.POU_InOut = POU_INOUT_0702;
+    POU_Tree.Nn        = NN_0702;
+    POU_Tree.Level     = LVL_0702;
+    POU_Tree.Name      = NAME_0702;
+    POU_Tree.Comment   = COMMENT_0702;
+    POU_Tree.POU_InOut = POU_INOUT_0702;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0703;
-    //POU_Tree.Level     = LVL_0703;
-    //POU_Tree.Name      = NAME_0703;
-    //POU_Tree.Comment   = COMMENT_0703;
-    //POU_Tree.POU_InOut = POU_INOUT_0703;
+    POU_Tree.Nn        = NN_0703;
+    POU_Tree.Level     = LVL_0703;
+    POU_Tree.Name      = NAME_0703;
+    POU_Tree.Comment   = COMMENT_0703;
+    POU_Tree.POU_InOut = POU_INOUT_0703;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0704;
-    //POU_Tree.Level     = LVL_0704;
-    //POU_Tree.Name      = NAME_0704;
-    //POU_Tree.Comment   = COMMENT_0704;
-    //POU_Tree.POU_InOut = POU_INOUT_0704;
+    POU_Tree.Nn        = NN_0704;
+    POU_Tree.Level     = LVL_0704;
+    POU_Tree.Name      = NAME_0704;
+    POU_Tree.Comment   = COMMENT_0704;
+    POU_Tree.POU_InOut = POU_INOUT_0704;
     //m_POU.push_back( POU_Tree );
 
-    //POU_Tree.Nn        = NN_0705;
-    //POU_Tree.Level     = LVL_0705;
-    //POU_Tree.Name      = NAME_0705;
-    //POU_Tree.Comment   = COMMENT_0705;
-    //POU_Tree.POU_InOut = POU_INOUT_0705;
+    POU_Tree.Nn        = NN_0705;
+    POU_Tree.Level     = LVL_0705;
+    POU_Tree.Name      = NAME_0705;
+    POU_Tree.Comment   = COMMENT_0705;
+    POU_Tree.POU_InOut = POU_INOUT_0705;
     //m_POU.push_back( POU_Tree );
 
     // --- 8 Bit operations ---
@@ -634,13 +634,14 @@ void MyFrame::OnPOUTreeSelChanged( wxTreeEvent &event )
             }
         }
     }
+
     event.Skip();
 }
 // ============================================================================
 
 
 // ============================================================================
-void MyFrame::OnPOUEnter( wxMouseEvent& event )
+void MyFrame::OnPOUEnter( wxMouseEvent &event )
 // ============================================================================
 {
 //printf( "MyFrame::OnPOUEnter\n" );
@@ -650,7 +651,7 @@ void MyFrame::OnPOUEnter( wxMouseEvent& event )
 
 
 // ============================================================================
-void MyFrame::OnPOULeave( wxMouseEvent& event )
+void MyFrame::OnPOULeave( wxMouseEvent &event )
 {
 //printf( "MyFrame::OnPOULeave\n" );
 	event.Skip();
@@ -659,14 +660,12 @@ void MyFrame::OnPOULeave( wxMouseEvent& event )
 
 
 // ============================================================================
-void MyFrame::onPOUBeginDrag( wxTreeEvent& event )
+void MyFrame::onPOUBeginDrag( wxTreeEvent &event )
 // ============================================================================
 {
-printf( "onPOUBeginDrag\n" );
-
-wxTreeItemId m_draggedItem = event.GetItem();
-wxString s = m_pou_tree->GetItemText( m_draggedItem );
-printf( "POU=%s\n", (const char*) s.c_str() );
+	wxTreeItemId m_draggedItem = event.GetItem();
+	wxString s = m_pou_tree->GetItemText( m_draggedItem );
+printf( "onPOUBeginDrag - POU=%s\n", (const char*) s.c_str() );
 
 	event.Skip();
 }

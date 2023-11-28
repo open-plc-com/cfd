@@ -1,4 +1,17 @@
+/*
+    Name:        myframe_fb.h
+    Purpose:     Open-PLC Tools
+    Author:      www.open-plc.com
+    Created:     2023/11
+    Modified by:
+    RCS-ID:
+    Copyright:   (c) Open-PLC
+    Licence:     The MIT License (MIT)
+*/
+
+
 #pragma once
+
 
 #include <wx/artprov.h>
 #include <wx/xrc/xmlres.h>
@@ -37,7 +50,6 @@
 #include <wx/radiobut.h>
 #include <wx/listbox.h>
 
-///////////////////////////////////////////////////////////////////////////
 
 #define ID_GRID_ADD 1000
 #define ID_GRID_DEL 1001
@@ -76,235 +88,190 @@
 #define ID_SHOW_F6 1034
 #define ID_B1 1035
 
-///////////////////////////////////////////////////////////////////////////////
-/// Class MyFrameFB
-///////////////////////////////////////////////////////////////////////////////
+
 class MyFrameFB : public wxFrame
 {
-	private:
-
-	protected:
-		wxAuiNotebook *m_nb_shape;
-		wxPanel *m_panel2;
-		wxStaticText *m_shape_name;
-		wxStaticLine *m_staticline1;
-		wxAuiNotebook *m_nb_edit;
-		wxPanel *m_panel3;
-		wxStaticText *m_edit_name;
-		wxStaticLine *m_staticline3;
-		wxStyledTextCtrl *m_edit;
-		wxAuiNotebook *m_nb_grid;
-		wxPanel *m_panel4;
-		wxToolBar *m_grid_tool;
-		wxToolBarToolBase *m_grid_add;
-		wxToolBarToolBase *m_grid_del;
-		wxToolBarToolBase *m_grid_up;
-		wxToolBarToolBase *m_grid_down;
-		wxStaticLine *m_staticline5;
-		wxGrid *m_grid;
-		wxAuiNotebook *m_nb_prj;
-		wxPanel *m_panel5;
-		wxToolBar *m_prj_tool;
-		wxToolBarToolBase *m_prj_add;
-		wxToolBarToolBase *m_prj_del;
-		wxToolBarToolBase *m_prj_up;
-		wxToolBarToolBase *m_prj_down;
-		wxToolBarToolBase *m_prj_edit;
-		wxStaticLine *m_staticline51;
-		wxGrid *m_prj_tree;
-		wxTreeCtrl *m_pou_tree;
-		wxTextCtrl *m_pou_text;
-		wxAuiToolBar *m_st_tool;
-		wxAuiToolBarItem *m_st_tool_cursor;
-		wxAuiToolBarItem *m_add_tool_show;
-		wxAuiToolBarItem *m_add_tool_compiler;
-		wxAuiToolBarItem *m_fbd_tool_cursor;
-		wxAuiToolBarItem *m_fbd_tool_move;
-		wxAuiToolBarItem *m_fbd_tool_cmt;
-		wxAuiToolBarItem *m_fbd_tool_var;
-		wxAuiToolBarItem *m_fbd_tool_fb;
-		wxAuiToolBarItem *m_fbd_tool_connect;
-		wxAuiToolBarItem *m_ld_tool_cursor;
-		wxAuiToolBarItem *m_ld_tool_move;
-		wxAuiToolBarItem *m_ld_tool_cmt;
-		wxAuiToolBarItem *m_ld_tool_power;
-		wxAuiToolBarItem *m_ld_tool_coil;
-		wxAuiToolBarItem *m_ld_tool_contact;
-		wxAuiToolBarItem *m_ld_tool_var;
-		wxAuiToolBarItem *m_ld_tool_fb;
-		wxAuiToolBarItem *m_ld_tool_connect;
-		wxMenuBar *m_menubar;
-		wxMenu *m_menu_file;
-		wxMenu *m_menu_view;
-		wxMenu *m_menu_tool;
-		wxStatusBar *m_statusbar;
-
-		// Virtual event handlers, override them in your derived class
-		virtual void OnPrjSelectCell( wxGridEvent &event ) { event.Skip(); }
-		virtual void OnPrjSize( wxSizeEvent &event ) { event.Skip(); }
-		virtual void OnPOUEnter( wxMouseEvent &event ) { event.Skip(); }
-		virtual void OnPOULeave( wxMouseEvent &event ) { event.Skip(); }
-		virtual void onPOUBeginDrag( wxTreeEvent &event ) { event.Skip(); }
-		virtual void OnPOUTreeSelChanged( wxTreeEvent &event ) { event.Skip(); }
-		virtual void OnToolCursor( wxCommandEvent &event ) { event.Skip(); }
-
-
-	public:
-		wxPanel *m_panel1;
-		Shape *m_shape;
-		wxAuiToolBar *m_add_tool;
-		wxAuiToolBar *m_fbd_tool;
-		wxAuiToolBar *m_ld_tool;
-
-		MyFrameFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( 500,400 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
-
-		~MyFrameFB();
-
+    protected:
+        wxAuiNotebook *m_nb_shape;
+        wxPanel *m_panel2;
+        wxStaticText *m_shape_name;
+        wxStaticLine *m_staticline1;
+        wxAuiNotebook *m_nb_edit;
+        wxPanel *m_panel3;
+        wxStaticText *m_edit_name;
+        wxStaticLine *m_staticline3;
+        wxStyledTextCtrl *m_edit;
+        wxAuiNotebook *m_nb_grid;
+        wxPanel *m_panel4;
+        wxToolBar *m_grid_tool;
+        wxToolBarToolBase *m_grid_add;
+        wxToolBarToolBase *m_grid_del;
+        wxToolBarToolBase *m_grid_up;
+        wxToolBarToolBase *m_grid_down;
+        wxStaticLine *m_staticline5;
+        wxGrid *m_grid;
+        wxAuiNotebook *m_nb_prj;
+        wxPanel *m_panel5;
+        wxToolBar *m_prj_tool;
+        wxToolBarToolBase *m_prj_add;
+        wxToolBarToolBase *m_prj_del;
+        wxToolBarToolBase *m_prj_up;
+        wxToolBarToolBase *m_prj_down;
+        wxToolBarToolBase *m_prj_edit;
+        wxStaticLine *m_staticline51;
+        wxGrid *m_prj_tree;
+        wxTreeCtrl *m_pou_tree;
+        wxTextCtrl *m_pou_text;
+        wxAuiToolBar *m_st_tool;
+        wxAuiToolBarItem *m_st_tool_cursor;
+        wxAuiToolBarItem *m_add_tool_show;
+        wxAuiToolBarItem *m_add_tool_compiler;
+        wxAuiToolBarItem *m_fbd_tool_cursor;
+        wxAuiToolBarItem *m_fbd_tool_move;
+        wxAuiToolBarItem *m_fbd_tool_cmt;
+        wxAuiToolBarItem *m_fbd_tool_var;
+        wxAuiToolBarItem *m_fbd_tool_fb;
+        wxAuiToolBarItem *m_fbd_tool_connect;
+        wxAuiToolBarItem *m_ld_tool_cursor;
+        wxAuiToolBarItem *m_ld_tool_move;
+        wxAuiToolBarItem *m_ld_tool_cmt;
+        wxAuiToolBarItem *m_ld_tool_power;
+        wxAuiToolBarItem *m_ld_tool_coil;
+        wxAuiToolBarItem *m_ld_tool_contact;
+        wxAuiToolBarItem *m_ld_tool_var;
+        wxAuiToolBarItem *m_ld_tool_fb;
+        wxAuiToolBarItem *m_ld_tool_connect;
+        wxMenuBar *m_menubar;
+        wxMenu *m_menu_file;
+        wxMenu *m_menu_view;
+        wxMenu *m_menu_tool;
+        wxStatusBar *m_statusbar;
+        virtual void OnPrjSelectCell( wxGridEvent &event ) { event.Skip(); }
+        virtual void OnPrjSize( wxSizeEvent &event ) { event.Skip(); }
+        virtual void OnPOUEnter( wxMouseEvent &event ) { event.Skip(); }
+        virtual void OnPOULeave( wxMouseEvent &event ) { event.Skip(); }
+        virtual void onPOUBeginDrag( wxTreeEvent &event ) { event.Skip(); }
+        virtual void OnPOUTreeSelChanged( wxTreeEvent &event ) { event.Skip(); }
+        virtual void OnToolCursor( wxCommandEvent &event ) { event.Skip(); }
+    public:
+        wxPanel *m_panel1;
+        Shape *m_shape;
+        wxAuiToolBar *m_add_tool;
+        wxAuiToolBar *m_fbd_tool;
+        wxAuiToolBar *m_ld_tool;
+        MyFrameFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( 500,400 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+        ~MyFrameFB();
 };
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class ConfigPrjFB
-///////////////////////////////////////////////////////////////////////////////
 class ConfigPrjFB : public wxDialog
 {
-	private:
-
-	protected:
-		wxStaticText *m_text;
-		wxGrid *m_grid_var;
-		wxButton *m_button;
-
-	public:
-
-		ConfigPrjFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxDefaultSize, long style = wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxSTAY_ON_TOP|wxSYSTEM_MENU );
-
-		~ConfigPrjFB();
-
+    protected:
+        wxStaticText *m_text;
+        wxGrid *m_grid_var;
+        wxButton *m_button;
+    public:
+        ConfigPrjFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxDefaultSize, long style = wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxSTAY_ON_TOP|wxSYSTEM_MENU );
+        ~ConfigPrjFB();
 };
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class PrjAddFB
-///////////////////////////////////////////////////////////////////////////////
 class PrjAddFB : public wxDialog
 {
-	private:
-
-	protected:
-		wxStaticLine *m_staticline6;
-		wxButton *m_button_ok;
-		wxButton *m_button_cancel;
-
-		// Virtual event handlers, override them in your derived class
-		virtual void onOK( wxCommandEvent &event ) { event.Skip(); }
-		virtual void OnCANCEL( wxCommandEvent &event ) { event.Skip(); }
-
-
-	public:
-		wxStaticText *m_name;
-		wxTextCtrl *m_text_name;
-		wxStaticText *m_language;
-		wxChoice *m_choice_lang;
-		wxStaticText *m_file_name;
-		wxFilePickerCtrl *m_file_set;
-
-		PrjAddFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxSTAY_ON_TOP );
-
-		~PrjAddFB();
-
+    protected:
+        wxStaticLine *m_staticline6;
+        wxButton *m_button_ok;
+        wxButton *m_button_cancel;
+        virtual void onOK( wxCommandEvent &event ) { event.Skip(); }
+        virtual void OnCANCEL( wxCommandEvent &event ) { event.Skip(); }
+    public:
+        wxStaticText *m_name;
+        wxTextCtrl *m_text_name;
+        wxStaticText *m_language;
+        wxChoice *m_choice_lang;
+        wxStaticText *m_file_name;
+        wxFilePickerCtrl *m_file_set;
+        PrjAddFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxSTAY_ON_TOP );
+        ~PrjAddFB();
 };
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class ObjPropsFB
-///////////////////////////////////////////////////////////////////////////////
 class ObjPropsFB : public wxDialog
 {
-	private:
-
-	protected:
-		wxSplitterWindow *m_splitter;
-		wxPanel *m_panel6;
-		wxPanel *m_panel7;
-		wxTextCtrl *m_text;
-		wxStaticText *m_static_text3;
-		wxPanel *m_panel8;
-		wxStaticBitmap *m_bitmap;
-		wxButton *m_button_ok;
-		wxButton *m_button_cancel;
-
-		// Virtual event handlers, override them in your derived class
-		virtual void OnPOUTreeSelChanged( wxTreeEvent &event ) { event.Skip(); }
-		virtual void OnChoise( wxCommandEvent &event ) { event.Skip(); }
-		virtual void onOK( wxCommandEvent &event ) { event.Skip(); }
-		virtual void OnCANCEL( wxCommandEvent &event ) { event.Skip(); }
-
-
-	public:
-		wxTreeCtrl *m_tree;
-		wxStaticText *m_static_text1;
-		wxTextCtrl *m_name;
-		wxStaticText *m_static_text2;
-		wxChoice *m_choice;
-		wxStaticLine *m_staticline6;
-
-		ObjPropsFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( 320,240 ), long style = wxDEFAULT_DIALOG_STYLE );
-
-		~ObjPropsFB();
-
-		void m_splitterOnIdle( wxIdleEvent &)
-		{
-			m_splitter->SetSashPosition( 240 );
-			m_splitter->Disconnect( wxEVT_IDLE, wxIdleEventHandler( ObjPropsFB::m_splitterOnIdle ), NULL, this );
-		}
-
+    protected:
+        wxSplitterWindow *m_splitter;
+        wxPanel *m_panel6;
+        wxPanel *m_panel7;
+        wxTextCtrl *m_text;
+        wxStaticText *m_static_text3;
+        wxPanel *m_panel8;
+        wxStaticBitmap *m_bitmap;
+        wxButton *m_button_cancel;
+        virtual void OnPOUTreeSelChanged( wxTreeEvent &event ) { event.Skip(); }
+        virtual void OnChoise( wxCommandEvent &event ) { event.Skip(); }
+        virtual void onOK( wxCommandEvent &event ) { event.Skip(); }
+        virtual void OnCANCEL( wxCommandEvent &event ) { event.Skip(); }
+    public:
+        wxTreeCtrl *m_tree;
+        wxStaticText *m_static_text1;
+        wxTextCtrl *m_name;
+        wxStaticText *m_static_text2;
+        wxChoice *m_choice;
+        wxStaticLine *m_staticline6;
+        wxButton *m_button_ok;
+        ObjPropsFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( 320,240 ), long style = wxDEFAULT_DIALOG_STYLE );
+        ~ObjPropsFB();
+        void m_splitterOnIdle( wxIdleEvent& )
+        {
+            m_splitter->SetSashPosition( 320 );
+            m_splitter->Disconnect( wxEVT_IDLE, wxIdleEventHandler( ObjPropsFB::m_splitterOnIdle ), NULL, this );
+        }
 };
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class ConnectPropsFB
-///////////////////////////////////////////////////////////////////////////////
 class ConnectPropsFB : public wxDialog
 {
-	private:
-
-	protected:
-		wxRadioButton *m_radio_btn1;
-		wxRadioButton *m_radio_btn2;
-		wxStaticText *m_static_text1;
-		wxTextCtrl *m_name;
-		wxStaticText *m_staticText11;
-		wxStaticBitmap *m_bitmap;
-		wxButton *m_button7;
-		wxButton *m_button6;
-
-	public:
-
-		ConnectPropsFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE );
-
-		~ConnectPropsFB();
-
+    protected:
+        wxRadioButton *m_radio_btn1;
+        wxRadioButton *m_radio_btn2;
+        wxStaticText *m_static_text1;
+        wxTextCtrl *m_name;
+        wxBoxSizer *bSizer3;
+        wxStaticText *m_staticText2;
+        wxPanel *m_panel;
+        wxStaticBitmap *m_bitmap;
+        wxButton *m_button_ok;
+        wxButton *m_button_cancel;
+        virtual void OnRadioButton1( wxCommandEvent &event ) { event.Skip(); }
+        virtual void OnRadioButton2( wxCommandEvent &event ) { event.Skip(); }
+        virtual void OnText( wxCommandEvent &event ) { event.Skip(); }
+        virtual void onOK( wxCommandEvent &event ) { event.Skip(); }
+        virtual void OnCANCEL( wxCommandEvent &event ) { event.Skip(); }
+    public:
+        ConnectPropsFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( 480,175 ), long style = wxDEFAULT_DIALOG_STYLE );
+        ~ConnectPropsFB();
 };
-
-///////////////////////////////////////////////////////////////////////////////
-/// Class VarPropsFB
-///////////////////////////////////////////////////////////////////////////////
 class VarPropsFB : public wxDialog
 {
-	private:
-
-	protected:
-		wxStaticText *m_staticText12;
-		wxChoice *m_choice3;
-		wxTextCtrl *m_textCtrl6;
-		wxListBox *m_listBox1;
-		wxStaticLine *m_staticline7;
-		wxStaticText *m_staticText13;
-		wxStaticBitmap *m_bitmap3;
-		wxButton *m_button8;
-		wxButton *m_button9;
-
-	public:
-
-		VarPropsFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE );
-
-		~VarPropsFB();
-
+    protected:
+        wxStaticText *m_text_1;
+        wxStaticText *m_text_3;
+        wxTextCtrl *m_text;
+        wxStaticLine *m_staticline7;
+        wxStaticText *m_text_2;
+        wxPanel *m_panel;
+        wxStaticBitmap *m_bitmap;
+        wxButton *m_button_ok;
+        wxButton *m_button_cancel;
+        virtual void OnChoice( wxCommandEvent &event ) { event.Skip(); }
+        virtual void OnListBox( wxCommandEvent &event ) { event.Skip(); }
+        virtual void onOK( wxCommandEvent &event ) { event.Skip(); }
+        virtual void OnCANCEL( wxCommandEvent &event ) { event.Skip(); }
+    public:
+        wxChoice *m_choice;
+        wxListBox *m_list;
+        VarPropsFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( 340,340 ), long style = wxDEFAULT_DIALOG_STYLE );
+        ~VarPropsFB();
+};
+class CommentPropsFB : public wxDialog
+{
+    protected:
+        wxTextCtrl *m_textCtrl7;
+        wxButton *m_button_ok;
+        wxButton *m_button_cancel;
+    public:
+        CommentPropsFB( wxWindow *parent, wxWindowID id = wxID_ANY, const wxString &title = wxEmptyString, const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxSize( 320,320 ), long style = wxDEFAULT_DIALOG_STYLE );
+        ~CommentPropsFB();
 };

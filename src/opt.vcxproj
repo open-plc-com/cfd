@@ -255,6 +255,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="connect_props.cpp" />
     <ClCompile Include="dialogs.cpp" />
     <ClCompile Include="lang.cpp" />
     <ClCompile Include="main.cpp" />
@@ -268,6 +269,7 @@
     <ClCompile Include="read_write_cfg.cpp" />
     <ClCompile Include="shape.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="var_props.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

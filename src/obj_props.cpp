@@ -73,8 +73,8 @@ void ObjProps::OnPOUTreeSelChanged( wxTreeEvent &event )
 
     m_text->Clear();
 
-    Shape_Ptr->clear();
     Link_Point_Ptr->clear();
+    Shape_Ptr->clear();
     Shape_Ptr->resize( 1 );
 
     SEL_POU = -1;
@@ -107,6 +107,23 @@ void ObjProps::OnPOUTreeSelChanged( wxTreeEvent &event )
         IN_OUT_Decode( m_pou->at(SEL_POU).POU_InOut, *IN_OUT_Decode_Ptr );
         obj_name = m_pou->at(SEL_POU).Name;
         Make_Obj( Block_ID, obj_name, *IN_OUT_Decode_Ptr, *Shape_Ptr, *Link_Point_Ptr );
+
+        if( obj_name != Block_Name )
+        {
+            //m_button_ok->Enable();
+            m_button_ok->Show( true );
+        }
+        else
+        {
+            //m_button_ok->Disable();
+            m_button_ok->Show( false );
+        }
+    }
+    else
+    {
+        obj_name = wxEmptyString;
+        //m_button_ok->Disable();
+        m_button_ok->Show( false );
     }
 
     m_panel8->GetSize( &x, &y );
@@ -181,6 +198,8 @@ void ObjProps::OnPOUTreeSelChanged( wxTreeEvent &event )
     wxImage img = bm.ConvertToImage();
     m_bitmap->SetBitmap( img );
 
+//printf( ">>> obj_name=%s Block_Name=%s\n", (const char*) obj_name.c_str(), (const char*) Block_Name.c_str() );
+
     event.Skip();
 }
 // ============================================================================
@@ -215,12 +234,20 @@ void ObjProps::OnChar( wxKeyEvent &event )
 void ObjProps::onOK( wxCommandEvent &event )
 // ============================================================================
 {
-//printf( "\nObjProps::onOK\n" );
-//printf( "obj_name=%s Block_Name=%s\n", (const char*) obj_name.c_str(), (const char*) Block_Name.c_str() );
+printf( "\nObjProps::onOK\n" );
+printf( "obj_name=%s Block_Name=%s\n", (const char*) obj_name.c_str(), (const char*) Block_Name.c_str() );
 // Check for obj_name & Block_Name
 
+printf( "Block_ID=%d\n", Block_ID );
+
+if( obj_name != wxEmptyString )
+{
+printf( "Shape_Ptr->size()=%d\n", Shape_Ptr->size() );
+
 	ON_OK = true;
-	//Close(); // ???
+	Close();
+}
+
 	event.Skip();
 }
 // ============================================================================

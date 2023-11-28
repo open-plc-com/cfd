@@ -27,7 +27,7 @@
 #endif // WIN32
 
 #define OPT_VER "000"
-#define SHOW_T1 // Show hidden cells in prj tree
+//#define SHOW_T1 // Show hidden cells in prj tree
 
 #define FONT_SIZE 10
 
@@ -35,7 +35,7 @@
 enum Shape_Type
 {
 	BOX,     // box shape (FB)
-	LINE,    // poliline (connect line)
+	//LINE,    // poliline (connect line)
 	TXT,     // text block (comment)
 	CONNECT, // connection
 	CMT,     // Comment
@@ -91,6 +91,7 @@ struct Shape_Struct
 {
     unsigned int ID;               // Unique shape ID
     unsigned int Block_ID;         // Nn of block in project (m_prj_tree)
+    Shape_Type   Type;             // Shape_Type
     wxString     Name;             // Name in project
     wxPoint      Name_Pos;         // Position of name
     wxPoint      Name_Pos_Def;     // Position of name
@@ -106,6 +107,8 @@ struct Shape_Struct
     unsigned int Min_Input_Nn;
     unsigned int Max_Input_Nn;
     unsigned int Size_W, Size_H;   // size of blank
+    unsigned int Font_Size;
+    wxString     Comment;
     bool         Selected;
 };
 

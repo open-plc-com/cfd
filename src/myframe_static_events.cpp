@@ -20,7 +20,7 @@
 
 
 // ============================================================================
-void MyFrame::OnF3( wxCommandEvent &event )
+void MyFrame::OnF3( wxCommandEvent &WXUNUSED( event ) )
 // ============================================================================
 {
     if( m_mgr1.GetPane( m_nb_prj ).IsShown() )
@@ -33,13 +33,13 @@ void MyFrame::OnF3( wxCommandEvent &event )
         m_mgr1.GetPane( m_nb_prj ).Show( true );
         m_mgr1.Update();
     }
-    event.Skip();
+    //event.Skip();
 }
 // ============================================================================
 
 
 // ============================================================================
-void MyFrame::OnF4( wxCommandEvent &event )
+void MyFrame::OnF4( wxCommandEvent &WXUNUSED( event ) )
 // ============================================================================
 {
     int n;
@@ -68,13 +68,13 @@ void MyFrame::OnF4( wxCommandEvent &event )
         m_mgr1.GetPane(m_nb_grid).Show(false);
         m_mgr1.Update();
     }
-    event.Skip();
+    //event.Skip();
 }
 // ============================================================================
 
 
 // ============================================================================
-void MyFrame::OnF5( wxCommandEvent &event )
+void MyFrame::OnF5( wxCommandEvent &WXUNUSED( event ) )
 // ============================================================================
 {
     if( m_mgr1.GetPane( m_pou_tree ).IsShown() )
@@ -88,69 +88,69 @@ void MyFrame::OnF5( wxCommandEvent &event )
         m_mgr1.GetPane( m_pou_tree ).Show( true ).BestSize( wxSize( 240, -1 ) );
         m_mgr1.GetPane( m_pou_text ).Show( true );
         m_mgr1.Update();
-m_pou_tree->Expand( pou_item_root );
+        m_pou_tree->Expand( pou_item_root );
     }
-    event.Skip();
+    //event.Skip();
 }
 // ============================================================================
 
 
 // ============================================================================
-void MyFrame::OnF6( wxCommandEvent &event )
+void MyFrame::OnF6( wxCommandEvent &WXUNUSED( event ) )
 // ============================================================================
 {
-//int i;
-//long l;
-//printf( "MyFrame::OnF6\n" );
+////int i;
+////long l;
+printf( "MyFrame::OnF6\n" );
 
-	ObjProps *dlg = new ObjProps( this );
-	dlg->SetTitle( wxT( "Block properties" ) );
+//	ObjProps *dlg = new ObjProps( this );
+//	dlg->SetTitle( wxT( "Block properties" ) );
 
-//dlg->m_static_text1->Show( false );
-//dlg->m_choice->Show( false );
-//dlg->m_staticline6->Show( false );
-dlg->m_name->Disable();
-//dlg->m_choice->Disable();
+////dlg->m_static_text1->Show( false );
+////dlg->m_choice->Show( false );
+////dlg->m_staticline6->Show( false );
+//dlg->m_name->Disable();
+////dlg->m_choice->Disable();
 
-//dlg->Fit();
-
-
+////dlg->Fit();
 
 
 
 
 
-dlg->m_pou = &m_POU;
 
-dlg->IN_OUT_Decode_Ptr = IN_OUT_Decode_Ptr;
-dlg->Shape_Ptr = Shape_Ptr;
-dlg->Link_Point_Ptr = Link_Point_Ptr;
-dlg->Block_ID = Block_ID;
-dlg->Block_Name = Block_Name;
-dlg->IN_OUT_Decode = IN_OUT_Decode;
-dlg->Make_Obj = Make_Obj;
-
-dlg->Fill_POU();
-
-dlg->ShowModal();
-
-//dlg->
 
 //dlg->m_pou = &m_POU;
 
-//dlg->grid = m_prj_tree;
-//dlg->m_name->SetLabel( wxT( "Project Name" ) );
-//dlg->m_language->Show( false );
-//dlg->m_choice_lang->Show( false );
-//dlg->PRJ_FILE_SELECT = true;
-//dlg->m_file_name->Show( true );
-//dlg->m_file_set->Show( true );
+//dlg->IN_OUT_Decode_Ptr = IN_OUT_Decode_Ptr;
+//dlg->Shape_Ptr = Shape_Ptr;
+//dlg->Link_Point_Ptr = Link_Point_Ptr;
+//dlg->Block_ID = Block_ID;
+//dlg->Block_Name = Block_Name;
+//dlg->IN_OUT_Decode = IN_OUT_Decode;
+//dlg->Make_Obj = Make_Obj;
+
+//dlg->Fill_POU();
+
+//dlg->ShowModal();
+
+////dlg->
+
+////dlg->m_pou = &m_POU;
+
+////dlg->grid = m_prj_tree;
+////dlg->m_name->SetLabel( wxT( "Project Name" ) );
+////dlg->m_language->Show( false );
+////dlg->m_choice_lang->Show( false );
+////dlg->PRJ_FILE_SELECT = true;
+////dlg->m_file_name->Show( true );
+////dlg->m_file_set->Show( true );
 
 
 
-	delete dlg;
+//	delete dlg;
 
-	event.Skip();
+//	event.Skip();
 }
 // ============================================================================
 
@@ -159,7 +159,7 @@ dlg->ShowModal();
 void MyFrame::OnPrjSave( wxCommandEvent &event )
 // ============================================================================
 {
-printf( "MyFrame::OnPrjSave\n" );
+//printf( "MyFrame::OnPrjSave\n" );
     event.Skip();
 }
 // ============================================================================
@@ -169,7 +169,7 @@ printf( "MyFrame::OnPrjSave\n" );
 void MyFrame::OnPrjOpen( wxCommandEvent &event )
 // ============================================================================
 {
-printf( "MyFrame::OnPrjOpen\n" );
+//printf( "MyFrame::OnPrjOpen\n" );
     event.Skip();
 }
 // ============================================================================
@@ -430,7 +430,7 @@ void MyFrame::OnPrjAdd( wxCommandEvent &WXUNUSED( event ) )
             }
         }
     }
-printf( "Add\n" );
+//printf( "Add\n" );
 	Init_POU_Tree();
 }
 // ============================================================================
@@ -440,7 +440,7 @@ printf( "Add\n" );
 void MyFrame::OnPrjDel( wxCommandEvent &WXUNUSED( event ) )
 // ============================================================================
 {
-printf( "MyFrame::OnPrjDel\n" );
+//printf( "MyFrame::OnPrjDel\n" );
 }
 // ============================================================================
 

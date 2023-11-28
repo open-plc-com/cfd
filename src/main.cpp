@@ -53,7 +53,7 @@ IMPLEMENT_APP( my )
 bool my::OnInit()
 {
 
-    #ifdef WIN32
+    #ifdef ___WIN32
         BOOL chk = AllocConsole();
         if (chk)
         {

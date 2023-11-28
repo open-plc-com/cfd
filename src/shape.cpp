@@ -10,15 +10,13 @@
 */
 
 
+#include "gbl.h"
 #include "shape.h"
 #include "myframe_fb.h"
 #include "myframe.h"
-//#include "myframe_fb.h"
-//#include "gbl.h"
-//#include "dialogs.h"
 #include "obj_props.h"
-
-
+#include "connect_props.h"
+#include "var_props.h"
 
 
 // ============================================================================
@@ -28,7 +26,6 @@ Shape::Shape( wxWindow      *parent,
               const wxSize  &size,
               long          style)
       :wxScrolledWindow( parent, id, pos, size, style ) {}
-//{printf( "Shape::Shape - constructor\n" );}
 //Shape::~Shape() {}
 // ============================================================================
 
@@ -37,8 +34,9 @@ Shape::Shape( wxWindow      *parent,
 void Shape::OnLeftMouseDown( wxMouseEvent &event )
 // ============================================================================
 {
-Shape_Struct obj;
-wxPoint pos = ScreenToClient( wxGetMousePosition() );
+	Shape_Struct obj;
+
+	pos = ScreenToClient( wxGetMousePosition() );
 
 //printf( "Shape::OnLeftMouseDown\n" );
 printf( "Shape::OnLeftMouseDown x=%d y=%d\n", pos.x, pos.y );
@@ -56,16 +54,16 @@ printf( "m_tool(ADD_TOOL)=%d\n", m_tool );
 		case FBD_TOOL:
 			{
 //printf( "m_tool(FBD_TOOL)=%d\n", m_tool );
-				if( m_fbd_tool->GetToolToggled( ID_FBD_CURSOR ) )
-				{
-printf( "ID_FBD_CURSOR\n" );
-				}
-				else
-				if( m_fbd_tool->GetToolToggled( ID_FBD_MOVE ) )
-				{
-printf( "ID_FBD_MOVE\n" );
-				}
-				else
+//				if( m_fbd_tool->GetToolToggled( ID_FBD_CURSOR ) )
+//				{
+////printf( "ID_FBD_CURSOR\n" );
+//				}
+//				else
+//				if( m_fbd_tool->GetToolToggled( ID_FBD_MOVE ) )
+//				{
+////printf( "ID_FBD_MOVE\n" );
+//				}
+//				else
 				if( m_fbd_tool->GetToolToggled( ID_FBD_CMT ) )
 				{
 printf( "ID_FBD_CMT\n" );
@@ -74,68 +72,155 @@ printf( "ID_FBD_CMT\n" );
 				if( m_fbd_tool->GetToolToggled( ID_FBD_VAR ) )
 				{
 printf( "ID_FBD_VAR\n" );
-				}
-				else
-				if( m_fbd_tool->GetToolToggled( ID_FBD_MOVE ) )
-				{
-printf( "ID_FBD_MOVE\n" );
+					VarProps *dlg = new VarProps( this );
+					dlg->SetTitle( wxT( "Variable properties" ) );
+					dlg->m_choice->Append( wxT( "Input" ) );
+					dlg->m_choice->Append( wxT( "Output" ) );
+					dlg->m_choice->Append( wxT( "Input/Output" ) );
+					dlg->m_choice->SetSelection( 0 );
+
+dlg->arr_s.Clear();
+dlg->arr_s.Add( wxT( "Var_1" ) );
+dlg->arr_s.Add( wxT( "Var_2" ) );
+dlg->arr_s.Add( wxT( "Var_3" ) );
+dlg->arr_s.Add( wxT( "Var_4" ) );
+//dlg->Preview();
+
+					if( dlg->arr_s.Count() > 0 )
+					{
+						dlg->m_list->Set( dlg->arr_s );
+					}
+
+					dlg->ShowModal();
+
+// ...
+
+					delete dlg;
 				}
 				else
 				if( m_fbd_tool->GetToolToggled( ID_FBD_FB ) )
 				{
-printf( "ID_FBD_FB\n" );
+//printf( "ID_FBD_FB\n" );
+					ObjProps *dlg = new ObjProps( this );
+					dlg->SetTitle( wxT( "Block properties" ) );
+					dlg->m_name->Disable();
+					dlg->m_pou				= m_POU;
+					dlg->IN_OUT_Decode_Ptr	= IN_OUT_Decode_Ptr;
+					dlg->Shape_Ptr			= Shape_Ptr;
+					dlg->Link_Point_Ptr		= Link_Point_Ptr;
+					dlg->Block_ID			= block_id;
+					dlg->Block_Name			= block_name;
+					dlg->IN_OUT_Decode		= MyFrame::IN_OUT_Decode;
+					dlg->Make_Obj			= MyFrame::Make_Obj;
+					dlg->Fill_POU();
+					dlg->m_button_ok->Show( false );
 
-	ObjProps *dlg = new ObjProps( this );
-	dlg->SetTitle( wxT( "Block properties" ) );
+					dlg->ShowModal();
 
-//dlg->m_static_text1->Show( false );
-//dlg->m_choice->Show( false );
-//dlg->m_staticline6->Show( false );
-dlg->m_name->Disable();
-//dlg->m_choice->Disable();
-
-dlg->m_pou = m_POU;
-
-dlg->IN_OUT_Decode_Ptr = IN_OUT_Decode_Ptr;
-dlg->Shape_Ptr = Shape_Ptr;
-dlg->Link_Point_Ptr = Link_Point_Ptr;
-//dlg->Block_ID = Block_ID;
-//dlg->Block_Name = Block_Name;
-dlg->IN_OUT_Decode = MyFrame::IN_OUT_Decode;
-dlg->Make_Obj = MyFrame::Make_Obj;
-
-dlg->Fill_POU();
-
-//int i;
-//for( i = 0; i < m_POU->size(); i++ )
-//{
-//printf( "m_pou->at(%d).Name=%s\n", i, m_POU->at(i).Name.c_str() );
-//}
-
-
-dlg->ShowModal();
-
-	delete dlg;
-
+					if( dlg->ON_OK )
+					{
+//printf( "dlg->ON_OK x=%d y=%d\n", pos.x, pos.y );
+						m_fbd_tool->ToggleTool( FBD_TOOL, false);
+						m_fbd_tool->ToggleTool( ID_FBD_CURSOR, true );
+// insert object to shape
+					}
+					delete dlg;
 				}
 				else
 				if( m_fbd_tool->GetToolToggled( ID_FBD_CONNECT ) )
 				{
 printf( "ID_FBD_CONNECT\n" );
+					ConnectProps *dlg = new ConnectProps( this );
+					dlg->SetTitle( wxT( "Connect properties" ) );
+					dlg->Block_ID	= block_id;
+					dlg->Block_Name	= block_name;
+
+					dlg->ShowModal();
+
+					delete dlg;
 				}
-
-
-
 			}
 			break;
 		case LD_TOOL:
 			{
 printf( "m_tool(LD_TOOL)=%d\n", m_tool );
+//				if( m_ld_tool->GetToolToggled( ID_LD_CURSOR ) )
+//				{
+//printf( "ID_LD_CURSOR\n" );
+//				}
+//				else
+//				if( m_ld_tool->GetToolToggled( ID_LD_MOVE ) )
+//				{
+////printf( "ID_LD_MOVE\n" );
+//				}
+//				else
+				if( m_ld_tool->GetToolToggled( ID_LD_CMT ) )
+				{
+printf( "ID_LD_CMT\n" );
+				}
+				else
+				if( m_ld_tool->GetToolToggled( ID_LD_VAR ) )
+				{
+printf( "ID_LD_VAR\n" );
+					VarProps *dlg = new VarProps( this );
+					dlg->SetTitle( wxT( "Variable properties" ) );
+
+					dlg->ShowModal();
+
+// ...
+
+					delete dlg;
+				}
+//				else
+//				if( m_ld_tool->GetToolToggled( ID_FBD_MOVE ) )
+//				{
+////printf( "ID_LD_MOVE\n" );
+//				}
+				else
+				if( m_ld_tool->GetToolToggled( ID_LD_FB ) )
+				{
+//printf( "ID_LD_FB\n" );
+					ObjProps *dlg = new ObjProps( this );
+					dlg->SetTitle( wxT( "Block properties" ) );
+					dlg->m_name->Disable();
+					dlg->m_pou				= m_POU;
+					dlg->IN_OUT_Decode_Ptr	= IN_OUT_Decode_Ptr;
+					dlg->Shape_Ptr			= Shape_Ptr;
+					dlg->Link_Point_Ptr		= Link_Point_Ptr;
+					dlg->Block_ID			= block_id;
+					dlg->Block_Name			= block_name;
+					dlg->IN_OUT_Decode		= MyFrame::IN_OUT_Decode;
+					dlg->Make_Obj			= MyFrame::Make_Obj;
+					dlg->Fill_POU();
+					dlg->m_button_ok->Show( false );
+
+					dlg->ShowModal();
+
+					if( dlg->ON_OK )
+					{
+//printf( "dlg->ON_OK x=%d y=%d\n", pos.x, pos.y );
+						m_ld_tool->ToggleTool( FBD_TOOL, false);
+						m_ld_tool->ToggleTool( ID_FBD_CURSOR, true );
+// insert object to shape
+					}
+					delete dlg;
+				}
+				else
+				if( m_ld_tool->GetToolToggled( ID_LD_CONNECT ) )
+				{
+printf( "ID_LD_CONNECT\n" );
+					ConnectProps *dlg = new ConnectProps( this );
+					dlg->SetTitle( wxT( "Connect properties" ) );
+					dlg->Block_ID	= block_id;
+					dlg->Block_Name	= block_name;
+
+					dlg->ShowModal();
+
+					delete dlg;
+				}
 			}
 			break;
 	}
-
-
 
 //start_pos = ScreenToClient( wxGetMousePosition() );
 //CaptureMouse();
@@ -239,7 +324,7 @@ event.Skip();
 void Shape::OnMiddleDown( wxMouseEvent &event )
 // ============================================================================
 {
-wxPoint pos = ScreenToClient( wxGetMousePosition() );
+pos = ScreenToClient( wxGetMousePosition() );
 printf( "Shape::OnMiddleDown x=%d y=%d\n", pos.x, pos.y );
 
 //printf( "GetToolToggled(ID_FBD_CURSOR)=%d\n", m_fbd_tool->GetToolToggled( ID_FBD_CURSOR ) );

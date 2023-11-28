@@ -53,6 +53,7 @@ void MyFrame::Init()
 	m_shape->m_POU  = &m_POU;
 
 	m_fbd_tool->ToggleTool( ID_FBD_CURSOR, true );
+	//m_fbd_tool->ToggleTool( FBD_TOOL, true );
 	m_ld_tool->ToggleTool( ID_LD_CURSOR, true );
 
 
@@ -294,9 +295,9 @@ void MyFrame::Init()
 // Disable AUI tool; for develop
 m_fbd_tool->DeleteTool( ID_FBD_MOVE );
 m_fbd_tool->DeleteTool( ID_FBD_CMT );
-m_fbd_tool->DeleteTool( ID_FBD_VAR );
+//m_fbd_tool->DeleteTool( ID_FBD_VAR );
 //m_fbd_tool->DeleteTool( ID_FBD_FB );
-m_fbd_tool->DeleteTool( ID_FBD_CONNECT );
+//m_fbd_tool->DeleteTool( ID_FBD_CONNECT );
 
 m_ld_tool->DeleteTool( ID_LD_MOVE );
 m_ld_tool->DeleteTool( ID_LD_CMT );
@@ -304,8 +305,8 @@ m_ld_tool->DeleteTool( ID_LD_POWER );
 m_ld_tool->DeleteTool( ID_LD_COIL );
 m_ld_tool->DeleteTool( ID_LD_CONTACT );
 m_ld_tool->DeleteTool( ID_LD_VAR );
-m_ld_tool->DeleteTool( ID_LD_FB );
-m_ld_tool->DeleteTool( ID_LD_CONNECT );
+//m_ld_tool->DeleteTool( ID_LD_FB );
+//m_ld_tool->DeleteTool( ID_LD_CONNECT );
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	m_mgr1.Update();
